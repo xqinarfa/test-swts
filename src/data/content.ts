@@ -796,7 +796,7 @@ export const CAREERS_DATA = {
     stats: [
       { target: 100, formatThousands: false, unit: "%", label: "Safety Protocol Adherence" },
       { target: 16, formatThousands: false, unit: "+", label: "Years Engineering Track Record" },
-      { target: 2, formatThousands: false, unit: "Roles", label: "Active Critical Openings" },
+      { target: 10, formatThousands: false, unit: "Roles", label: "Active Critical Openings" },
       { target: 0, formatThousands: false, unit: "Deviation", label: "Zero Compromise on Quality" },
     ],
   },
@@ -804,7 +804,7 @@ export const CAREERS_DATA = {
     {
       id: "staff-mechanical-engineer",
       title: "Staff Mechanical Engineer",
-      department: "Engineering & Workshop Operations",
+      department: "Mechanical Engineering",
       location: "Batam, Kepulauan Riau (On-site)",
       type: "Full-Time · Permanent",
       experience: "3 - 5 Years Experience",
@@ -843,19 +843,200 @@ export const CAREERS_DATA = {
       ]
     },
     {
+      id: "cad-cam-specialist",
+      title: "CAD/CAM & Tooling Design Engineer",
+      department: "Mechanical Engineering",
+      location: "Batam, Kepulauan Riau (On-site)",
+      type: "Full-Time · Permanent",
+      experience: "2 - 4 Years Experience",
+      tag: "PRECISION TOOLING",
+      badgeColor: "bg-blue-600/90 text-white",
+      summary: "Design custom precision jigs, multi-axis CNC clamping fixtures, and generate optimized CAM toolpaths for complex turbine components, pump housings, and marine shaft restoration.",
+      responsibilities: [
+        "Create parametric 3D CAD models and detailed workshop fabrication drawings for custom holding fixtures and alignment tools.",
+        "Program multi-axis CNC milling, turning, and boring machines using Mastercam / Fusion 360 / SolidCAM.",
+        "Verify collision detection, cutting tool deflection, and feeds/speeds for tough alloys (Duplex, Monel, Inconel).",
+        "Partner closely with CNC operators on the workshop floor to optimize cycle times and achieve sub-10 micron tolerances.",
+        "Maintain organized toolpath libraries and standard tooling database."
+      ],
+      requirements: [
+        "Diploma (D3/D4) or Bachelor's in Mechanical Engineering or Manufacturing Design.",
+        "2+ years experience in CAM programming for multi-axis CNC machining centers or heavy boring mills.",
+        "Deep familiarity with cutting tool selection, tool coatings, and cutting physics for exotic marine alloys.",
+        "Proficiency in SolidWorks, Autodesk Inventor, or Mastercam."
+      ],
+      qualifications: [
+        "D3/S1 Mechanical or Manufacturing",
+        "Mastercam / SolidCAM Proficient",
+        "GD&T Blueprint Interpretation",
+        "Exotic Alloy Machining Experience"
+      ],
+      perks: [
+        "Competitive salary + technical skill allowance",
+        "Full BPJS Ketenagakerjaan & Kesehatan coverage",
+        "High-spec workstation with dual monitors & 3D mouse",
+        "Training sponsorship for advanced 5-axis CAM & metrology",
+        "Subsidized lunch and transport"
+      ]
+    },
+    {
+      id: "thermal-spray-technician",
+      title: "HVAF & Thermal Spray Coating Operator",
+      department: "Thermal Spray & Surface Coating",
+      location: "Batam, Kepulauan Riau (On-site)",
+      type: "Full-Time · Permanent",
+      experience: "2 - 5 Years Experience",
+      tag: "CORE SPECIALTY",
+      badgeColor: "bg-amber-600/90 text-white",
+      summary: "Set up and operate high-velocity air-fuel (HVAF) supersonic thermal spray guns applying Tungsten Carbide and nickel-chrome coatings on critical hydraulic pistons, turbine rotors, and pump sleeves.",
+      responsibilities: [
+        "Prepare component surfaces via precision grit blasting and degreasing to achieve specified surface anchor profiles.",
+        "Calibrate and operate HVAF thermal spray equipment, gas flow controllers, and automated manipulation turntables.",
+        "Apply wear and corrosion-resistant coatings (WC-Co-Cr, NiCr, Stellite) with porosity < 0.5% and high bond strength.",
+        "Perform coating thickness measurements, bond pull-off tests, and microscopic cross-section metallographic checks.",
+        "Maintain thermal spray torches, powder feeders, and compressed air filtration units."
+      ],
+      requirements: [
+        "SMK or Diploma in Mechanical, Metallurgy, or Surface Engineering.",
+        "2+ years practical experience operating Thermal Spray (HVAF, HVOF, or Plasma Spray) systems.",
+        "Knowledge of thermal spray powders, gas parameters (Propane, Air, Oxygen), and surface grit blasting standards (SSPC/NACE).",
+        "Disciplined attitude towards PPE and thermal spray respiratory safety protocols."
+      ],
+      qualifications: [
+        "Thermal Spray / HVAF Operator Experience",
+        "SMK/Diploma Mechanical or Metallurgy",
+        "Coating Thickness Gauge & NDT Basics",
+        "Strict Adherence to Spray Booth Safety"
+      ],
+      perks: [
+        "Attractive base salary + hazardous environment hazard allowance",
+        "Complete health and respiratory safety checkups periodically",
+        "Full BPJS insurance coverage",
+        "Technical training on next-generation European supersonic HVAF equipment"
+      ]
+    },
+    {
+      id: "laser-cladding-technician",
+      title: "Laser Cladding CNC Specialist",
+      department: "Laser Cladding & Reclamation",
+      location: "Batam, Kepulauan Riau (On-site)",
+      type: "Full-Time · Permanent",
+      experience: "3+ Years Experience",
+      tag: "ADVANCED TECH",
+      badgeColor: "bg-purple-600/90 text-white",
+      summary: "Program and operate robotic multi-kilowatt fiber laser cladding cells for low-distortion metallurgical overlay of Inconel 625, cobalt alloys, and carbide matrices on marine propeller shafts and high-pressure valves.",
+      responsibilities: [
+        "Program multi-axis robotic laser cladding cells and rotary positioning chucks for automated metallurgical overlay.",
+        "Select powder feed rates, laser optics focus, shielding gas flows, and energy density to ensure zero-porosity cladding with minimal base metal dilution (< 5%).",
+        "Perform pre-heating, cladding passes, and post-cladding non-destructive testing inspections.",
+        "Conduct routine maintenance and optical lens alignment on fiber laser sources and powder delivery nozzles.",
+        "Collaborate with metallurgy engineers to optimize microstructures and hardness profiles."
+      ],
+      requirements: [
+        "Diploma or Bachelor's in Mechatronics, Welding Technology, or Mechanical Engineering.",
+        "Minimum 3 years experience operating robotic welding cells, CNC laser systems, or automated cladding machinery.",
+        "Solid understanding of laser safety (Class 4 lasers), optical beam alignment, and metallurgical bonding.",
+        "Experience in programming 6-axis industrial robots (KUKA, ABB, or Fanuc) is highly regarded."
+      ],
+      qualifications: [
+        "Robotic / CNC Programming Experience",
+        "Laser Material Processing Background",
+        "Diploma/S1 Mechatronics or Metallurgy",
+        "Laser Safety Class 4 Certification"
+      ],
+      perks: [
+        "Above-market salary package for specialized laser technology talent",
+        "High-tech climate-controlled laser clean-room workshop environment",
+        "Comprehensive health and medical insurance",
+        "International OEM laser certification pathways"
+      ]
+    },
+    {
+      id: "boring-honing-machinist",
+      title: "Senior Horizontal Boring & Honing Machinist",
+      department: "Precision Machining & Honing",
+      location: "Batam, Kepulauan Riau (On-site)",
+      type: "Full-Time · Permanent",
+      experience: "5+ Years Experience",
+      tag: "HEAVY MACHINING",
+      badgeColor: "bg-slate-700 text-white",
+      summary: "Set up and operate large horizontal boring machines and our 8-meter deep-hole honing bench for internal cylinder refurbishment up to 800 mm diameter and hydraulic actuator restoration.",
+      responsibilities: [
+        "Set up and machine large marine diesel engine blocks, stern tubes, pump casings, and hydraulic cylinders on horizontal boring mills.",
+        "Operate the 8-meter horizontal honing machine to produce controlled cross-hatch surface finishes with sub-micron Ra values.",
+        "Inspect bore straightness, roundness, and concentricity using precision bore gauges, inside micrometers, and dial test indicators.",
+        "Select honing stones, abrasives, and honing oils to achieve specified cross-hatch angles and seal surface requirements.",
+        "Train and mentor junior machinists on precision centering and heavy workpiece clamping safety."
+      ],
+      requirements: [
+        "Vocational High School (SMK Mesin) or Diploma in Mechanical/Manufacturing.",
+        "Minimum 5 years operating heavy machine tools: horizontal boring mills (Borer), heavy manual lathes, or deep honing machines.",
+        "Exceptional competency in using micrometers (internal, external, depth) and interpreting technical drawings with tight ISO fit tolerances (H7, g6, etc.).",
+        "Physical stamina and dedication to clean machine tool maintenance."
+      ],
+      qualifications: [
+        "5+ Years Heavy Workshop Machining",
+        "Deep-Hole Honing Mastery",
+        "Precision Metrology & GD&T Expertise",
+        "SMK / Diploma Mechanical"
+      ],
+      perks: [
+        "Top-tier senior technical artisan salary + overtime incentives",
+        "Complete BPJS and private inpatient healthcare",
+        "Workshop performance productivity bonuses",
+        "Provision of premium measuring tools and safety gear"
+      ]
+    },
+    {
+      id: "vibration-balancing-analyst",
+      title: "Rotating Equipment Vibration & Balancing Analyst",
+      department: "Dynamic Balancing & Vibration",
+      location: "Batam, Kepulauan Riau (On-site)",
+      type: "Full-Time · Permanent",
+      experience: "3 - 6 Years Experience",
+      tag: "ROTATING ASSETS",
+      badgeColor: "bg-cyan-700 text-white",
+      summary: "Execute precision dynamic balancing up to 2 tonnes on high-speed rotors and perform advanced FFT spectral vibration analysis on multi-stage pumps, gas compressors, and turbochargers.",
+      responsibilities: [
+        "Perform static and dynamic multi-plane balancing of impellers, motor rotors, turbine wheels, and fan assemblies in compliance with ISO 1940 (G1.0, G2.5 grades).",
+        "Conduct vibration data acquisition and FFT spectrum diagnosis (unbalance, misalignment, bearing looseness, resonance) using modern vibration analyzers.",
+        "Calculate balancing correction weights and oversee trial weight test runs.",
+        "Compile comprehensive balancing and vibration condition monitoring reports for maritime and offshore clients.",
+        "Perform on-site dynamic balancing onboard vessels or offshore platforms when required."
+      ],
+      requirements: [
+        "Diploma or Bachelor's in Mechanical Engineering, Physics, or Marine Engineering.",
+        "ISO 18436-2 Vibration Analyst (Category I or Category II) certification is strongly preferred.",
+        "Minimum 3 years experience in rotating machinery dynamic balancing and vibration analysis.",
+        "Strong analytical ability to interpret spectrum plots, bode diagrams, and phase analysis.",
+        "Fluent in English for international marine client reports."
+      ],
+      qualifications: [
+        "Vibration Analyst Cat I/II Certified",
+        "ISO 1940 Dynamic Balancing Expertise",
+        "D3/S1 Mechanical or Marine Engineering",
+        "Condition Monitoring Reporting"
+      ],
+      perks: [
+        "Competitive specialist salary package + field deployment allowance",
+        "Sponsorship for Vibration Category II/III certification",
+        "Full BPJS Ketenagakerjaan & Kesehatan",
+        "Flexible project-based incentives"
+      ]
+    },
+    {
       id: "welder-operator",
-      title: "Welder Operator",
-      department: "Precision Fabrication & Thermal Reclamation",
+      title: "Welder Operator (6G / PTA / GTAW)",
+      department: "Fabrication & Certified Welding",
       location: "Batam, Kepulauan Riau (On-site)",
       type: "Full-Time · Permanent",
       experience: "2 - 5 Years Experience",
       tag: "HIGH DEMAND",
       badgeColor: "bg-emerald-600/90 text-white",
-      summary: "Operate advanced welding and thermal cladding systems, including PTA (Plasma Transferred Arc), zero-distortion laser cladding, TIG, and MIG/SMAW for surface hardfacing and high-spec alloy shaft reclamation.",
+      summary: "Execute precision welding and thermal reclamation on critical shafts, pump impellers, valve seats, and bearing journals using certified SMAW, GTAW, and Plasma Transferred Arc hardfacing.",
       responsibilities: [
-        "Execute precision welding and thermal reclamation on critical shafts, pump impellers, valve seats, and bearing journals.",
-        "Operate automated Laser Cladding and PTA hardfacing equipment in accordance with verified WPS (Welding Procedure Specifications).",
-        "Perform manual TIG (GTAW) and MIG (GMAW) welding on exotic alloys (Stellite, Inconel, stainless steel, bronze, tool steels).",
+        "Execute precision welding and thermal reclamation on critical marine components in accordance with verified WPS.",
+        "Operate automated PTA hardfacing and manual TIG (GTAW) / MIG (GMAW) welding on exotic alloys (Stellite, Inconel, bronze).",
         "Monitor pre-heating, interpass temperature, and post-weld heat treatment (PWHT) parameters to prevent thermal cracking and distortion.",
         "Prepare weld joints and perform post-weld cleaning, visual inspection, and liquid penetrant testing (PT) preparation.",
         "Maintain clean, disciplined 5S workshop workstations and adhere strictly to hot work safety protocols."
@@ -864,9 +1045,7 @@ export const CAREERS_DATA = {
         "Vocational High School (SMK Teknik Pengelasan/Mesin) or Diploma in Mechanical/Welding Technology.",
         "Valid Welder Certification (BNSP, Migas, or Class Society 3G/4G/6G SMAW/GTAW preferred).",
         "Minimum 2 years of proven welding experience in heavy engineering, shipyard, or precision fabrication workshops.",
-        "Experience or familiarity with Laser Welding, PTA, or Thermal Spray coatings is a distinct advantage.",
-        "Proficient in interpreting welding symbols, engineering blueprints, and weld overlay thickness requirements.",
-        "High stamina, steady hand, exceptional eye for bead consistency, and zero-compromise safety mindset."
+        "Proficient in interpreting welding symbols, engineering blueprints, and weld overlay thickness requirements."
       ],
       qualifications: [
         "Certified Welder (6G / 3G / 4G)",
@@ -878,9 +1057,115 @@ export const CAREERS_DATA = {
         "Competitive basic salary plus attractive overtime compensation",
         "Full BPJS Ketenagakerjaan & BPJS Kesehatan coverage",
         "Full safety gear (PPE) and heavy-duty protective equipment allowance",
-        "Opportunity to receive certified training on automated Laser Cladding technology",
-        "Company transport and subsidized meal facilities",
-        "Permanent employment opportunity based on performance review"
+        "Opportunity to receive certified training on automated Laser Cladding technology"
+      ]
+    },
+    {
+      id: "qa-qc-ndt-inspector",
+      title: "QA/QC Inspector & NDT Level II Specialist",
+      department: "Quality Assurance & NDT",
+      location: "Batam, Kepulauan Riau (On-site)",
+      type: "Full-Time · Permanent",
+      experience: "3 - 5 Years Experience",
+      tag: "ZERO DEFECT",
+      badgeColor: "bg-indigo-600/90 text-white",
+      summary: "Ensure zero-deviation quality standards through precision dimensional verification using laser trackers and micrometers, alongside certified MT, PT, and UT inspections for ABS/DNV marine certifications.",
+      responsibilities: [
+        "Perform incoming, in-process, and final dimensional inspections on machined, coated, and welded marine components.",
+        "Execute Non-Destructive Testing (Liquid Penetrant, Magnetic Particle, and Ultrasonic Testing) per ASME Sec V / AWS / ISO standards.",
+        "Verify coating thickness, hardness (Rockwell, Vickers, Leeb), and surface roughness parameters.",
+        "Generate Inspection & Test Plans (ITP), Non-Conformance Reports (NCR), and comprehensive Quality Dossiers.",
+        "Host third-party classification society surveyors (ABS, DNV, Bureau Veritas, Lloyd's Register) during witness hold-points."
+      ],
+      requirements: [
+        "Diploma or Bachelor's in Mechanical, Materials, or Metallurgy Engineering.",
+        "Valid ASNT / SNT-TC-1A Level II Certification in at least two methods (PT, MT, or UT).",
+        "Minimum 3 years QA/QC inspection experience in precision machine shop, marine reconditioning, or pressure equipment.",
+        "Deep familiarity with GD&T blueprints, calibration standards, and ISO 9001 quality management."
+      ],
+      qualifications: [
+        "ASNT Level II in PT, MT, or UT",
+        "D3/S1 Mechanical or Metallurgy",
+        "Precision Metrology & Laser Measurement",
+        "Class Society Witness Experience"
+      ],
+      perks: [
+        "Attractive professional salary + certification allowances",
+        "Comprehensive health insurance for employee & family",
+        "Direct collaboration with global marine classification agencies",
+        "Continuous career advancement into Quality Management"
+      ]
+    },
+    {
+      id: "high-voltage-motor-technician",
+      title: "High-Voltage Motor & Generator Rewinder",
+      department: "Electrical & Motor Rewinding",
+      location: "Batam, Kepulauan Riau (On-site)",
+      type: "Full-Time · Permanent",
+      experience: "3 - 7 Years Experience",
+      tag: "EXPANDING TEAM",
+      badgeColor: "bg-teal-600/90 text-white",
+      summary: "Execute precision rewinding, insulation system redesign, vacuum pressure impregnation (VPI), and high-pot surge testing for industrial electric motors, traction motors, and marine main generators.",
+      responsibilities: [
+        "Dismantle, clean, inspect, and take electrical winding data for AC/DC motors, high-voltage induction motors, and alternators.",
+        "Manufacture and insert diamond coils, stator winding, rotor winding, and slot insulation using Class F and Class H materials.",
+        "Perform core loss testing, surge comparison testing, Megger insulation resistance, and dielectric dissipation factor tests.",
+        "Operate Vacuum Pressure Impregnation (VPI) autoclaves and curing bake ovens.",
+        "Perform final electrical dynamic no-load run tests and vibration checks."
+      ],
+      requirements: [
+        "Vocational High School (SMK Teknik Listrik/Elektro) or Diploma in Electrical Engineering.",
+        "Minimum 3 years hands-on experience rewinding AC/DC low and medium/high-voltage industrial motors or marine alternators.",
+        "Proficient with coil winding machines, surge testers, hi-pot testers, and resistance micro-ohmmeters.",
+        "Diligent adherence to electrical workshop safety and lockout/tagout (LOTO) protocols."
+      ],
+      qualifications: [
+        "SMK / Diploma in Electrical Engineering",
+        "HV Motor / Generator Rewinding Experience",
+        "VPI Insulation Process Knowledge",
+        "Electrical Metrology & Surge Testing"
+      ],
+      perks: [
+        "Competitive salary + skill level allowance + overtime",
+        "Full BPJS Ketenagakerjaan & BPJS Kesehatan",
+        "Safe, modern electrical testing bay facility",
+        "Company meals and uniform provisions"
+      ]
+    },
+    {
+      id: "workshop-hse-coordinator",
+      title: "Workshop HSE & Safety Coordinator",
+      department: "Workshop Operations & HSE",
+      location: "Batam, Kepulauan Riau (On-site)",
+      type: "Full-Time · Permanent",
+      experience: "2 - 4 Years Experience",
+      tag: "SAFETY FIRST",
+      badgeColor: "bg-orange-600/90 text-white",
+      summary: "Champion zero-incident workshop operations, enforce hot-work and heavy overhead crane lifting permits, lead daily toolbox talks, and ensure strict SMK3 and international OSHA compliance.",
+      responsibilities: [
+        "Conduct daily workshop safety walkthroughs, hazard identification, and risk assessments (HIRADC).",
+        "Issue and inspect Permits to Work (PTW) for hot work (welding/thermal spray), confined spaces, working at heights, and heavy rigging.",
+        "Lead morning toolbox talks, safety induction for visitors and subcontractors, and incident investigation reporting.",
+        "Oversee the proper storage, handling, and disposal of hazardous waste (B3 chemicals, thermal spray dust, spent abrasives).",
+        "Coordinate mandatory annual health surveillance, fire safety drill exercises, and emergency response team readiness."
+      ],
+      requirements: [
+        "Bachelor's Degree or Diploma in Occupational Health & Safety (K3), Environmental Engineering, or related technical field.",
+        "Certified Ahli K3 Umum (AK3U) by Kemnaker RI is mandatory.",
+        "Minimum 2 years HSE experience in a fabrication workshop, machine shop, shipyard, or heavy industrial facility.",
+        "Strong interpersonal skills, firm but collaborative leadership, and excellent documentation discipline."
+      ],
+      qualifications: [
+        "Certified Ahli K3 Umum (Kemnaker)",
+        "D3/S1 K3 or Environmental Engineering",
+        "Workshop HIRADC & PTW Administration",
+        "Hazardous Waste (B3) Management"
+      ],
+      perks: [
+        "Competitive salary package + management allowance",
+        "Full health and life insurance coverage",
+        "Leadership role reporting directly to Workshop Director",
+        "Continuous professional development in industrial hygiene and environmental management"
       ]
     }
   ],

@@ -45,22 +45,32 @@ export default function Footer() {
             </span>
             <ul className="space-y-3 font-mono text-xs uppercase tracking-wider text-white/70">
               <li>
-                <a href="#about" className="hover:text-white transition-colors">
+                <a href="/about" className="hover:text-white transition-colors">
                   About
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-white transition-colors">
+                <a href="/specializations" className="hover:text-white transition-colors">
+                  Specializations
+                </a>
+              </li>
+              <li>
+                <a href="/careers" className="hover:text-white transition-colors text-red-400 font-semibold">
+                  Careers
+                </a>
+              </li>
+              <li>
+                <a href="/#services" className="hover:text-white transition-colors">
                   Services <span className="text-white/40">(04)</span>
                 </a>
               </li>
               <li>
-                <a href="#news" className="hover:text-white transition-colors">
+                <a href="/#news" className="hover:text-white transition-colors">
                   News
                 </a>
               </li>
               <li>
-                <a href="#quote" className="hover:text-white transition-colors">
+                <a href="/#quote" className="hover:text-white transition-colors">
                   Contact
                 </a>
               </li>

@@ -2,6 +2,7 @@ export const NAV_LINKS = [
   { label: "HOME", href: "/" },
   { label: "ABOUT", href: "/about" },
   { label: "SPECIALIZATIONS", href: "/specializations" },
+  { label: "CAREERS", href: "/careers" },
   { label: "SERVICES (04)", href: "/#services" },
   { label: "NEWS", href: "/#news" },
   { label: "CONTACT", href: "/#contact" },
@@ -758,5 +759,154 @@ export const SPECIALIZATIONS_DATA: SpecializationItem[] = [
     image: "/assets/specializations/white-metal-babbitting.jpg",
   },
 ];
+
+export interface JobPosition {
+  id: string;
+  title: string;
+  department: string;
+  location: string;
+  type: string;
+  experience: string;
+  tag: string;
+  badgeColor: string;
+  summary: string;
+  responsibilities: string[];
+  requirements: string[];
+  qualifications: string[];
+  perks: string[];
+}
+
+export const CAREERS_DATA = {
+  hero: {
+    badge: "CAREERS AT SWTS BATAM",
+    titlePrefix: "Shape the future of precision engineering",
+    titleSuffix: "and critical maritime solutions.",
+    bgImage: "/assets/specializations/hero-workshop.jpg",
+    tags: [
+      "Batam Strategic Hub",
+      "Competitive Compensation",
+      "Comprehensive Health & Safety",
+      "Advanced CNC & Laser Training",
+    ],
+  },
+  intro: {
+    badge: "WORK AT PT. SWTS BATAM",
+    headline: "We invest in specialized engineering talent to solve the most demanding industrial challenges.",
+    subtext: "From ultra-precision laser cladding to heavy marine shaft balancing, our engineering team in Batam sets the standard for reliability. We provide hands-on mentorship, modern machine parks, and a safety-first culture where your skills truly matter.",
+    stats: [
+      { target: 100, formatThousands: false, unit: "%", label: "Safety Protocol Adherence" },
+      { target: 16, formatThousands: false, unit: "+", label: "Years Engineering Track Record" },
+      { target: 2, formatThousands: false, unit: "Roles", label: "Active Critical Openings" },
+      { target: 0, formatThousands: false, unit: "Deviation", label: "Zero Compromise on Quality" },
+    ],
+  },
+  positions: [
+    {
+      id: "staff-mechanical-engineer",
+      title: "Staff Mechanical Engineer",
+      department: "Engineering & Workshop Operations",
+      location: "Batam, Kepulauan Riau (On-site)",
+      type: "Full-Time · Permanent",
+      experience: "3 - 5 Years Experience",
+      tag: "FLAGSHIP OPENING",
+      badgeColor: "bg-red-600/90 text-white",
+      summary: "Lead mechanical tolerance calculations, component reconditioning protocols, rotor dynamic balancing analysis, and precision fabrication design for mission-critical marine and industrial machinery.",
+      responsibilities: [
+        "Develop detailed engineering procedures and inspection plans for component restoration (turbines, pumps, shafts, bearings).",
+        "Perform dimensional inspection calculations, tolerance stack-up analysis, and mechanical fit verifications.",
+        "Oversee 2-Tonne dynamic balancing and vibration analysis protocols on high-speed rotors.",
+        "Produce and revise 2D/3D technical drawings using AutoCAD and SolidWorks for precision machining and laser cladding setups.",
+        "Interface directly with client engineering superintendents and classification societies (ABS, DNV, BV, Lloyd's Register).",
+        "Collaborate with workshop machinists, welders, and NDT technicians to resolve on-the-floor technical deviations."
+      ],
+      requirements: [
+        "Bachelor's Degree (S1/D4) in Mechanical Engineering (Teknik Mesin) or Marine Engineering.",
+        "Minimum 3 years of hands-on experience in workshop engineering, rotating equipment reconditioning, or marine repair.",
+        "Strong proficiency in 2D/3D CAD (AutoCAD, SolidWorks, or Inventor) and reading GD&T (Geometric Dimensioning & Tolerancing).",
+        "Demonstrated understanding of dynamic balancing standards (ISO 1940), machining fits, and non-destructive testing (NDT).",
+        "Good professional communication skills in Indonesian and English (technical reporting).",
+        "Self-driven, meticulous attention to dimensional accuracy, and committed to workshop zero-incident safety."
+      ],
+      qualifications: [
+        "Bachelor's in Mechanical Engineering",
+        "AutoCAD & SolidWorks Certified",
+        "Rotating Equipment & Balancing Knowledge",
+        "Fluent in Technical English"
+      ],
+      perks: [
+        "Competitive industry salary with annual performance bonus",
+        "Complete BPJS Ketenagakerjaan & BPJS Kesehatan coverage",
+        "Comprehensive private health insurance (including dental & inpatient)",
+        "Daily meal and transportation allowances",
+        "Continuous specialized professional certifications (Vibration Analyst, NDT, etc.)",
+        "Clear technical career ladder and cross-functional leadership mobility"
+      ]
+    },
+    {
+      id: "welder-operator",
+      title: "Welder Operator",
+      department: "Precision Fabrication & Thermal Reclamation",
+      location: "Batam, Kepulauan Riau (On-site)",
+      type: "Full-Time · Permanent",
+      experience: "2 - 5 Years Experience",
+      tag: "HIGH DEMAND",
+      badgeColor: "bg-emerald-600/90 text-white",
+      summary: "Operate advanced welding and thermal cladding systems, including PTA (Plasma Transferred Arc), zero-distortion laser cladding, TIG, and MIG/SMAW for surface hardfacing and high-spec alloy shaft reclamation.",
+      responsibilities: [
+        "Execute precision welding and thermal reclamation on critical shafts, pump impellers, valve seats, and bearing journals.",
+        "Operate automated Laser Cladding and PTA hardfacing equipment in accordance with verified WPS (Welding Procedure Specifications).",
+        "Perform manual TIG (GTAW) and MIG (GMAW) welding on exotic alloys (Stellite, Inconel, stainless steel, bronze, tool steels).",
+        "Monitor pre-heating, interpass temperature, and post-weld heat treatment (PWHT) parameters to prevent thermal cracking and distortion.",
+        "Prepare weld joints and perform post-weld cleaning, visual inspection, and liquid penetrant testing (PT) preparation.",
+        "Maintain clean, disciplined 5S workshop workstations and adhere strictly to hot work safety protocols."
+      ],
+      requirements: [
+        "Vocational High School (SMK Teknik Pengelasan/Mesin) or Diploma in Mechanical/Welding Technology.",
+        "Valid Welder Certification (BNSP, Migas, or Class Society 3G/4G/6G SMAW/GTAW preferred).",
+        "Minimum 2 years of proven welding experience in heavy engineering, shipyard, or precision fabrication workshops.",
+        "Experience or familiarity with Laser Welding, PTA, or Thermal Spray coatings is a distinct advantage.",
+        "Proficient in interpreting welding symbols, engineering blueprints, and weld overlay thickness requirements.",
+        "High stamina, steady hand, exceptional eye for bead consistency, and zero-compromise safety mindset."
+      ],
+      qualifications: [
+        "Certified Welder (6G / 3G / 4G)",
+        "SMK / Diploma in Welding/Mechanical",
+        "Specialized Alloy Experience (Inconel, Stellite)",
+        "Safety & 5S Disciplined"
+      ],
+      perks: [
+        "Competitive basic salary plus attractive overtime compensation",
+        "Full BPJS Ketenagakerjaan & BPJS Kesehatan coverage",
+        "Full safety gear (PPE) and heavy-duty protective equipment allowance",
+        "Opportunity to receive certified training on automated Laser Cladding technology",
+        "Company transport and subsidized meal facilities",
+        "Permanent employment opportunity based on performance review"
+      ]
+    }
+  ],
+  culture: {
+    badge: "WORKSHOP CULTURE & ENVIRONMENT",
+    headline: "Built for craftsmen who take pride in micron-level accuracy.",
+    description: "At PT. SWTS Batam, you work alongside experienced marine engineers and master machinists equipped with advanced European and Japanese machine tools. We cultivate an open, respectful, and safe work culture where technical rigor is celebrated.",
+    pillars: [
+      {
+        title: "State-of-the-Art Machine Park",
+        description: "Operate precision horizontal boring mills, 8-meter honing systems, high-power fiber laser cladding cells, and dynamic balancing rigs.",
+      },
+      {
+        title: "Zero-Harm Safety Priority",
+        description: "Safety is never compromised for speed. We maintain strict OSHA/SMK3 compliance, clean 5S workspaces, and top-grade personal protective equipment.",
+      },
+      {
+        title: "Continuous Professional Growth",
+        description: "We sponsor international welding certifications, NDT credentials, and technical workshops so our team stays at the cutting edge of surface engineering.",
+      },
+      {
+        title: "Strategic Marine Hub Location",
+        description: "Located in Batam, right across Singapore's maritime corridor, solving high-impact challenges for global shipping fleets, offshore platforms, and power plants.",
+      },
+    ],
+  },
+};
 
 

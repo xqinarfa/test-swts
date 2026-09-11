@@ -14,7 +14,10 @@ import {
   Columns,
   CheckCircle2,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   ArrowRight,
+  ArrowUp,
   ArrowUpRight,
   Sparkles,
   RotateCcw,
@@ -39,12 +42,13 @@ const FLAGSHIP_BADGES: Record<string, string> = {
 export default function SpecializationCatalogue() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [viewMode, setViewMode] = useState<"grid" | "master-detail">("grid");
+  const [viewMode, setViewMode] = useState<"grid" | "master-detail">("master-detail");
   const [activeMasterId, setActiveMasterId] = useState(SPECIALIZATIONS_DATA[0].id);
   const [expandedCardId, setExpandedCardId] = useState<string | null>(null);
   const [modalItem, setModalItem] = useState<SpecializationItem | null>(null);
 
   const controlsRef = useRef<HTMLDivElement>(null);
+  const isClickScrolling = useRef(false);
 
   // Compute category counts
   const categoryCounts = useMemo(() => {
@@ -115,60 +119,82 @@ export default function SpecializationCatalogue() {
     setSelectedCategory("All");
   };
 
-  // Scroll-driven trigger for Split View (Master-Detail mode)
+  // ScrollSpy for Split View (Mirroring robust Services.tsx scrollspy)
   useEffect(() => {
     if (viewMode !== "master-detail") return;
 
-    let ticking = false;
+    const handleScrollSpy = () => {
+      if (isClickScrolling.current) return;
 
-    const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const targetY = window.innerHeight * 0.42; // Focal center line
-          let closestId = "";
-          let closestDistance = Infinity;
+      const viewportFocalPoint = Math.max(270, window.innerHeight * 0.36);
+      let closestId = "";
+      let minDistance = Infinity;
 
-          filteredItems.forEach((item) => {
-            const el = document.getElementById(`split-item-${item.id}`);
-            if (!el) return;
-            const rect = el.getBoundingClientRect();
-            // Check vertical distance of element center to target line
-            const elementCenter = rect.top + rect.height / 2;
-            const distance = Math.abs(elementCenter - targetY);
-            if (distance < closestDistance) {
-              closestDistance = distance;
-              closestId = item.id;
-            }
-          });
-
-          if (closestId && closestId !== activeMasterId) {
-            setActiveMasterId(closestId);
+      filteredItems.forEach((item) => {
+        const el = document.getElementById(`split-item-${item.id}`);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          const cardCenter = rect.top + rect.height / 2;
+          const dist = Math.abs(cardCenter - viewportFocalPoint);
+          if (dist < minDistance && rect.bottom > 120 && rect.top < window.innerHeight - 60) {
+            minDistance = dist;
+            closestId = item.id;
           }
-          ticking = false;
-        });
-        ticking = true;
+        }
+      });
+
+      // If past the bottom of all items, keep the last item active instead of defaulting to item 1
+      if (!closestId && filteredItems.length > 0) {
+        const firstEl = document.getElementById(`split-item-${filteredItems[0].id}`);
+        const lastEl = document.getElementById(`split-item-${filteredItems[filteredItems.length - 1].id}`);
+        if (firstEl && firstEl.getBoundingClientRect().top > viewportFocalPoint) {
+          closestId = filteredItems[0].id;
+        } else if (lastEl && lastEl.getBoundingClientRect().bottom < viewportFocalPoint) {
+          closestId = filteredItems[filteredItems.length - 1].id;
+        }
+      }
+
+      if (closestId && closestId !== activeMasterId) {
+        setActiveMasterId(closestId);
       }
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
+    window.addEventListener("scroll", handleScrollSpy, { passive: true });
+    handleScrollSpy();
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScrollSpy);
   }, [viewMode, filteredItems, activeMasterId]);
 
   const scrollToItem = (id: string) => {
     setActiveMasterId(id);
-    const el = document.getElementById(`split-item-${id}`);
-    if (el) {
-      const targetY = window.innerHeight * 0.42;
-      const rect = el.getBoundingClientRect();
-      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-      const targetScroll = currentScroll + rect.top - targetY + rect.height / 2;
-      window.scrollTo({
-        top: Math.max(0, targetScroll),
-        behavior: "smooth",
-      });
+    isClickScrolling.current = true;
+
+    if (typeof window !== "undefined" && window.innerWidth < 1024) {
+      // On mobile viewports where columns stack, scroll down to the preview card so user immediately sees details
+      const cardEl = document.getElementById("master-preview-card");
+      if (cardEl) {
+        const navOffset = 180;
+        const elementPosition = cardEl.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({
+          top: Math.max(0, elementPosition - navOffset),
+          behavior: "smooth",
+        });
+      }
+    } else {
+      const el = document.getElementById(`split-item-${id}`);
+      if (el) {
+        const navOffset = 240;
+        const elementPosition = el.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({
+          top: Math.max(0, elementPosition - navOffset),
+          behavior: "smooth",
+        });
+      }
     }
+
+    setTimeout(() => {
+      isClickScrolling.current = false;
+    }, 700);
   };
 
   const currentMasterIndex = useMemo(() => {
@@ -194,7 +220,7 @@ export default function SpecializationCatalogue() {
     <>
       <section
         id="catalogue"
-        className="relative w-full py-16 md:py-24 px-4 sm:px-8 lg:px-12 text-black bg-white"
+        className="relative w-full pt-16 md:pt-24 pb-8 md:pb-12 px-4 sm:px-8 lg:px-12 text-black bg-white"
       >
         <div className="max-w-7xl mx-auto space-y-10">
           {/* Section Header */}
@@ -248,7 +274,7 @@ export default function SpecializationCatalogue() {
           {/* Interactive Controls Bar: Search & Category Pills (Fitts's Law) */}
           <div
             ref={controlsRef}
-            className="sticky top-20 z-30 bg-white/95 backdrop-blur-md py-4 border-b border-black/10 flex flex-col gap-4 shadow-sm -mx-4 sm:-mx-8 lg:-mx-12 px-4 sm:px-8 lg:px-12"
+            className="sticky top-20 z-30 bg-white/95 backdrop-blur-md py-3.5 border-b border-neutral-200/80 flex flex-col gap-3.5 mb-6 shadow-xs -mx-4 sm:-mx-8 lg:-mx-12 px-4 sm:px-8 lg:px-12"
           >
             {/* Top row: Search Bar & Match Indicator */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
@@ -510,14 +536,13 @@ export default function SpecializationCatalogue() {
               })}
             </div>
           )}
-
           {/* ========================================================================= */}
           {/* VIEW MODE 2: MASTER-DETAIL VIEW (Scroll-Driven Interactive Showcase)      */}
           {/* ========================================================================= */}
           {viewMode === "master-detail" && filteredItems.length > 0 && (
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start relative pb-20">
-              {/* Left Column: Natural Page Scroll Stream (Sleek Gliding Pill Rows) */}
-              <div className="lg:col-span-6 flex flex-col gap-2 relative">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start relative">
+              {/* Left Column: Natural Page Scroll Stream (Sleek Gliding Pill Rows - Original Style) */}
+              <div className="lg:col-span-6 flex flex-col gap-2 relative pb-8 sm:pb-12 lg:pb-[340px]">
                 {filteredItems.map((item) => {
                   const isActive = item.id === activeMasterItem.id;
                   const flagshipBadge = FLAGSHIP_BADGES[item.id];
@@ -526,9 +551,20 @@ export default function SpecializationCatalogue() {
                     <div
                       key={item.id}
                       id={`split-item-${item.id}`}
-                      onMouseEnter={() => setActiveMasterId(item.id)}
+                      role="button"
+                      tabIndex={0}
+                      aria-label={`Select discipline ${item.number} ${item.title}`}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          scrollToItem(item.id);
+                        }
+                      }}
+                      onMouseEnter={() => {
+                        if (!isClickScrolling.current) setActiveMasterId(item.id);
+                      }}
                       onClick={() => scrollToItem(item.id)}
-                      className="relative group cursor-pointer"
+                      className="relative group cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-black rounded-xl"
                     >
                       <div
                         className={`relative z-10 px-5 py-4 rounded-xl transition-all duration-200 flex items-center justify-between gap-4 ${
@@ -606,116 +642,207 @@ export default function SpecializationCatalogue() {
                     </div>
                   );
                 })}
+
+                {/* Industrial Assurance & Bespoke Engineering Card (Meaningful runway, zero empty void) */}
+                <div className="mt-4 p-5 rounded-2xl bg-neutral-50 border border-black/10 space-y-3 shadow-xs">
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-[11px] uppercase tracking-wider font-semibold text-black/70 flex items-center gap-1.5">
+                      <Sparkles className="w-3.5 h-3.5 text-red-600" />
+                      Certified Workshop Standards
+                    </span>
+                    <span className="font-mono text-[10px] px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-semibold">
+                      ISO 9001:2015
+                    </span>
+                  </div>
+                  <p className="text-xs text-black/70 leading-relaxed font-sans">
+                    All 10 precision disciplines strictly comply with ASTM, API, and major marine classification society rules (ABS, DNV, Lloyd&apos;s Register, BV) with calibrated gauge inspection reports.
+                  </p>
+                  <div className="pt-2 border-t border-black/5 flex items-center justify-between text-xs">
+                    <span className="text-black/60 font-mono text-[11px]">Bespoke specifications needed?</span>
+                    <button
+                      onClick={() => {
+                        const formEl = document.getElementById("assessment-form");
+                        if (formEl) formEl.scrollIntoView({ behavior: "smooth", block: "center" });
+                      }}
+                      className="font-mono text-[11px] uppercase tracking-wider font-semibold text-red-600 hover:text-red-700 flex items-center gap-1 cursor-pointer"
+                    >
+                      <span>Inquire Custom RFQ</span>
+                      <ArrowRight className="w-3 h-3" />
+                    </button>
+                  </div>
+                </div>
               </div>
 
-              {/* Right Column: Sticky / Fixed Preview Card */}
-              <div className="lg:col-span-6 lg:sticky lg:top-[220px] lg:h-[calc(100vh-240px)] lg:min-h-[540px] lg:max-h-[660px] flex flex-col">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={activeMasterItem.id}
-                    initial={{ opacity: 0, scale: 0.99 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.99 }}
-                    transition={{ duration: 0.25, ease: "easeOut" }}
-                    className="h-full flex flex-col justify-between rounded-2xl border border-black/10 bg-neutral-50 overflow-hidden shadow-lg"
-                  >
-                    {/* Visual Card Photo */}
-                    <div className="relative aspect-[16/9] w-full overflow-hidden bg-neutral-900 shrink-0">
-                      <img
+              {/* Right Column: Sticky Preview Card (Starts below the line with visible space) */}
+              <div
+                id="master-preview-card"
+                className="lg:col-span-6 lg:sticky lg:top-[230px] self-start w-full flex flex-col"
+              >
+                <div className="w-full rounded-2xl border border-black/10 bg-neutral-50 overflow-hidden shadow-xl shadow-black/5 flex flex-col">
+                  {/* Visual Card Photo Header (Compact 150px Height) */}
+                  <div className="relative h-[150px] sm:h-[160px] w-full overflow-hidden bg-neutral-900 shrink-0">
+                    <AnimatePresence mode="popLayout">
+                      <motion.img
+                        key={activeMasterItem.id + "-img"}
+                        initial={{ opacity: 0.4, scale: 1.05 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0.4 }}
+                        transition={{ duration: 0.35, ease: "easeOut" }}
                         src={activeMasterItem.image}
                         alt={activeMasterItem.title}
                         className="w-full h-full object-cover"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                    </AnimatePresence>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent pointer-events-none" />
 
-                      <div className="absolute top-4 left-4 flex items-center gap-2">
-                        <span className="font-mono text-xs px-2.5 py-1 rounded bg-black text-white font-semibold">
-                          {activeMasterItem.number}
-                        </span>
-                        <span className="backdrop-blur-md bg-white/90 text-black font-mono text-[11px] uppercase tracking-wider px-3 py-1 rounded-full font-semibold">
-                          {activeMasterItem.category}
-                        </span>
-                      </div>
-
-                      {FLAGSHIP_BADGES[activeMasterItem.id] && (
-                        <div className="absolute bottom-3 left-4">
-                          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-[5px] bg-red-600 text-white font-mono text-[11px] uppercase tracking-wider font-semibold shadow-sm">
-                            <Sparkles className="w-3 h-3" />
-                            <span>{FLAGSHIP_BADGES[activeMasterItem.id]}</span>
-                          </span>
-                        </div>
-                      )}
+                    {/* Floating Badges */}
+                    <div className="absolute top-3 left-3 flex items-center gap-2 z-10">
+                      <span className="font-mono text-xs px-2.5 py-1 rounded bg-black text-white font-semibold">
+                        {activeMasterItem.number}
+                      </span>
+                      <span className="backdrop-blur-md bg-white/90 text-black font-mono text-[11px] uppercase tracking-wider px-3 py-0.5 rounded-full font-semibold shadow-xs">
+                        {activeMasterItem.category}
+                      </span>
                     </div>
 
-                    {/* Technical Card Details */}
-                    <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between gap-4 overflow-y-auto">
-                      <div className="space-y-4">
-                        <div className="space-y-1.5">
-                          <h3 className="font-bold text-2xl text-black leading-snug">
+                    <div className="absolute top-3 right-3 z-10 flex items-center gap-1">
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handlePrevDiscipline();
+                        }}
+                        disabled={currentMasterIndex === 0}
+                        aria-label="Previous discipline"
+                        className="w-6 h-6 rounded-full bg-black/60 backdrop-blur-md text-white/90 border border-white/10 flex items-center justify-center hover:bg-black/90 disabled:opacity-30 disabled:cursor-not-allowed transition-all cursor-pointer"
+                      >
+                        <ChevronLeft className="w-3.5 h-3.5" />
+                      </button>
+                      <span className="font-mono text-[11px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-black/60 backdrop-blur-md text-white/90 border border-white/10 font-medium">
+                        {currentMasterIndex + 1} / {filteredItems.length}
+                      </span>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleNextDiscipline();
+                        }}
+                        disabled={currentMasterIndex === filteredItems.length - 1}
+                        aria-label="Next discipline"
+                        className="w-6 h-6 rounded-full bg-black/60 backdrop-blur-md text-white/90 border border-white/10 flex items-center justify-center hover:bg-black/90 disabled:opacity-30 disabled:cursor-not-allowed transition-all cursor-pointer"
+                      >
+                        <ChevronRight className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
+
+                    {FLAGSHIP_BADGES[activeMasterItem.id] && (
+                      <div className="absolute bottom-2.5 left-3 z-10">
+                        <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-[5px] bg-red-600 text-white font-mono text-[11px] uppercase tracking-wider font-semibold shadow-sm">
+                          <Sparkles className="w-3 h-3" />
+                          <span>{FLAGSHIP_BADGES[activeMasterItem.id]}</span>
+                        </span>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Technical Card Details Body */}
+                  <div className="p-4 sm:p-5 flex flex-col justify-between gap-3">
+                    <AnimatePresence mode="wait">
+                      <motion.div
+                        key={activeMasterItem.id + "-body"}
+                        initial={{ opacity: 0, y: 6 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -4 }}
+                        transition={{ duration: 0.2, ease: "easeOut" }}
+                        className="space-y-3"
+                      >
+                        <div className="space-y-1">
+                          <h3 className="font-bold text-lg sm:text-xl text-black leading-snug line-clamp-2">
                             {activeMasterItem.title}
                           </h3>
-                          <p className="font-sans text-sm text-black/75 leading-relaxed">
+                          <p className="font-sans text-xs sm:text-sm text-black/75 leading-relaxed line-clamp-2">
                             {activeMasterItem.headline}
                           </p>
                         </div>
 
                         {/* Technical Parameter Chips */}
                         <div className="flex flex-wrap gap-1.5">
-                          {activeMasterItem.specifications.map((spec, i) => (
+                          {activeMasterItem.specifications.slice(0, 3).map((spec, i) => (
                             <span
                               key={i}
-                              className="font-mono text-[11px] px-2.5 py-1 rounded bg-white border border-black/10 text-black/80 font-medium"
+                              className="font-mono text-[11px] px-2.5 py-0.5 rounded bg-white border border-black/10 text-black/80 font-medium"
                             >
                               {spec}
                             </span>
                           ))}
                         </div>
 
-                        {/* Key Advantages */}
-                        <div className="space-y-2 pt-2 border-t border-black/10">
-                          <span className="font-mono text-xs uppercase tracking-wider text-black font-semibold block">
+                        {/* Key Advantages (Top 2 Compact Cards) */}
+                        <div className="space-y-1 pt-1.5 border-t border-black/10">
+                          <span className="font-mono text-[10.5px] uppercase tracking-wider text-black/60 font-semibold block">
                             Key Advantages:
                           </span>
-                          <div className="space-y-2">
-                            {activeMasterItem.keyAdvantages.slice(0, 3).map((adv, i) => (
+                          <div className="space-y-1.5">
+                            {activeMasterItem.keyAdvantages.slice(0, 2).map((adv, i) => (
                               <div
                                 key={i}
-                                className="flex items-start gap-2.5 text-xs text-black/80"
+                                className="flex items-start gap-2.5 text-xs text-black/80 bg-white p-2 rounded-xl border border-black/5"
                               >
-                                <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-0.5 shrink-0" />
-                                <span className="leading-snug">
-                                  <strong className="font-semibold text-black">
-                                    {adv.title}:
-                                  </strong>{" "}
-                                  <span className="text-black/75">{adv.desc}</span>
-                                </span>
+                                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 mt-0.5 shrink-0" />
+                                <div className="space-y-0.5 min-w-0">
+                                  <strong className="font-semibold text-black block leading-tight truncate text-xs">
+                                    {adv.title}
+                                  </strong>
+                                  <p className="text-black/65 text-[11px] leading-relaxed line-clamp-1">
+                                    {adv.desc}
+                                  </p>
+                                </div>
                               </div>
                             ))}
                           </div>
                         </div>
-                      </div>
+                      </motion.div>
+                    </AnimatePresence>
 
-                      {/* Actions */}
-                      <div className="pt-4 border-t border-black/10 flex items-center justify-between gap-3 shrink-0">
-                        <button
-                          onClick={() => setModalItem(activeMasterItem)}
-                          className="text-xs font-mono uppercase tracking-wider font-semibold text-black hover:text-red-600 flex items-center gap-1.5 transition-colors cursor-pointer py-1"
-                        >
-                          <span>Full Specifications</span>
-                          <ArrowUpRight className="w-3.5 h-3.5" />
-                        </button>
+                    {/* Direct Actions Footer (Always Clear & Visible) */}
+                    <div className="pt-3 border-t border-black/10 flex items-center justify-between gap-3 shrink-0">
+                      <button
+                        onClick={() => setModalItem(activeMasterItem)}
+                        className="text-xs font-mono uppercase tracking-wider font-semibold text-black hover:text-red-600 flex items-center gap-1.5 transition-colors cursor-pointer py-1"
+                      >
+                        <span>Full Specifications</span>
+                        <ArrowUpRight className="w-3.5 h-3.5" />
+                      </button>
 
-                        <button
-                          onClick={() => handleInquire(activeMasterItem)}
-                          className="px-5 py-2.5 rounded-full bg-black hover:bg-neutral-800 text-white font-mono text-xs uppercase tracking-wider font-semibold flex items-center gap-2 transition-all shadow-sm cursor-pointer"
-                        >
-                          <span>Inquire Service</span>
-                          <ArrowRight className="w-3.5 h-3.5" />
-                        </button>
-                      </div>
+                      <button
+                        onClick={() => handleInquire(activeMasterItem)}
+                        className="px-4 py-2 rounded-full bg-black hover:bg-neutral-800 text-white font-mono text-xs uppercase tracking-wider font-semibold flex items-center gap-2 transition-all shadow-sm cursor-pointer group"
+                      >
+                        <span>Inquire Service</span>
+                        <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                      </button>
                     </div>
-                  </motion.div>
-                </AnimatePresence>
+
+                    {/* Mobile-Only Helper: Back to Discipline List */}
+                    <div className="lg:hidden pt-2 border-t border-black/5 flex justify-center">
+                      <button
+                        onClick={() => {
+                          const el = document.getElementById(`split-item-${activeMasterItem.id}`);
+                          if (el) {
+                            const navOffset = 200;
+                            const elementPosition = el.getBoundingClientRect().top + window.scrollY;
+                            window.scrollTo({
+                              top: Math.max(0, elementPosition - navOffset),
+                              behavior: "smooth",
+                            });
+                          }
+                        }}
+                        className="text-[11px] font-mono uppercase tracking-wider text-black/60 hover:text-black flex items-center gap-1.5 py-1 transition-colors cursor-pointer"
+                      >
+                        <ArrowUp className="w-3 h-3" />
+                        <span>Back to Discipline List</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           )}

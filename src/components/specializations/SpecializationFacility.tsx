@@ -90,16 +90,14 @@ export default function SpecializationFacility() {
       <div className="max-w-7xl mx-auto space-y-20">
         {/* Section Header */}
         <div className="space-y-4 max-w-3xl">
-          <div className="inline-flex backdrop-blur-[5px] bg-white/12 border border-white/15 px-3.5 py-1.5 rounded-[5px]">
-            <span className="font-mono text-[12px] uppercase tracking-wider text-white font-semibold">
-              In-House Workshop Infrastructure
-            </span>
-          </div>
+          <span className="text-xs uppercase tracking-widest text-[#93c5fd] font-semibold block">
+            In-House Workshop Infrastructure
+          </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
             Integrated Engineering Facilities in Batam
           </h2>
-          <p className="font-sans text-sm sm:text-base text-white/70 leading-relaxed font-light">
-            Our specialized workshop in Batam combines thermal spray cells, precision honing benches, dynamic balancing, and cryogenic overhaul facilities — eliminating overseas logistics delays and guaranteeing single-source quality control.
+          <p className="text-sm sm:text-base text-neutral-300 leading-relaxed font-normal">
+            Our specialized workshop in Batam combines thermal spray cells, precision honing benches, dynamic balancing, and cryogenic overhaul facilities, eliminating overseas logistics delays and guaranteeing single-source quality control.
           </p>
         </div>
 
@@ -122,7 +120,7 @@ export default function SpecializationFacility() {
                 className="p-6 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-white/20 transition-all flex flex-col justify-between space-y-6 group"
               >
                 <div className="space-y-4">
-                  <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-red-500 group-hover:bg-red-600 group-hover:text-white transition-colors">
+                  <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-[#60a5fa] group-hover:bg-[#0C4B92] group-hover:text-white transition-colors">
                     <Icon className="w-6 h-6" />
                   </div>
                   <h3 className="font-bold text-lg text-white leading-snug">
@@ -144,9 +142,9 @@ export default function SpecializationFacility() {
         <div className="rounded-3xl border border-white/10 bg-neutral-900/90 p-8 sm:p-12 lg:p-16 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center shadow-2xl">
           {/* Left info */}
           <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex backdrop-blur-md bg-red-600/20 text-red-400 border border-red-500/30 px-3 py-1 rounded-full font-mono text-xs uppercase tracking-wider font-semibold">
+            <span className="text-xs uppercase tracking-widest text-[#93c5fd] font-semibold block">
               Fast-Track Engineering Assessment
-            </div>
+            </span>
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight leading-snug">
               Need Component Refurbishment or Custom Sealing?
             </h3>
@@ -173,7 +171,7 @@ export default function SpecializationFacility() {
             id="assessment-form"
             className={`lg:col-span-6 bg-black/50 p-6 sm:p-8 rounded-2xl border transition-all duration-500 ${
               highlightForm
-                ? "border-red-500 ring-2 ring-red-500/50 shadow-2xl shadow-red-500/20 scale-[1.01]"
+                ? "border-[#0C4B92] ring-2 ring-[#0C4B92]/50 shadow-2xl shadow-[#0C4B92]/20 scale-[1.01]"
                 : "border-white/10"
             }`}
           >
@@ -186,9 +184,9 @@ export default function SpecializationFacility() {
                 <div className="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 mx-auto flex items-center justify-center">
                   <CheckCircle2 className="w-6 h-6" />
                 </div>
-                <h4 className="text-xl font-bold text-white">Inquiry Received</h4>
-                <p className="text-xs text-white/70 max-w-sm mx-auto font-light">
-                  Thank you! Our senior engineering team will review your specifications and get in touch promptly.
+                <h4 className="text-xl font-bold text-white">Assessment Request Received</h4>
+                <p className="text-xs text-neutral-300 max-w-sm mx-auto font-normal">
+                  Thank you. Our senior engineering team in Batam will evaluate your component specifications and contact you within 24 operational hours.
                 </p>
               </motion.div>
             ) : (

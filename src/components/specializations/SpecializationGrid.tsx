@@ -77,7 +77,7 @@ export default function SpecializationGrid() {
                   {/* Body Content */}
                   <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
                     <div className="space-y-3.5">
-                      <h3 className="font-bold text-xl sm:text-2xl text-black tracking-tight group-hover:text-red-600 transition-colors">
+                      <h3 className="font-bold text-xl sm:text-2xl text-black tracking-tight group-hover:text-[#0C4B92] transition-colors">
                         {item.title}
                       </h3>
 

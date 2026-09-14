@@ -13,13 +13,13 @@ import {
   LayoutGrid,
   Columns,
   CheckCircle2,
+  ShieldCheck,
   ChevronDown,
   ChevronLeft,
   ChevronRight,
   ArrowRight,
   ArrowUp,
   ArrowUpRight,
-  Sparkles,
   RotateCcw,
   SlidersHorizontal,
 } from "lucide-react";
@@ -227,7 +227,7 @@ export default function SpecializationCatalogue() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-black/10">
             <div className="space-y-3 max-w-2xl">
               <div className="inline-flex items-center gap-2 backdrop-blur-[5px] bg-[rgba(112,110,110,0.13)] px-3 py-1.5 rounded-[5px]">
-                <Sparkles className="w-3.5 h-3.5 text-red-600" />
+                <ShieldCheck className="w-3.5 h-3.5 text-[#0C4B92]" />
                 <span className="font-mono text-[12px] font-semibold uppercase tracking-wider text-black">
                   Engineering Capabilities Directory
                 </span>
@@ -307,7 +307,7 @@ export default function SpecializationCatalogue() {
                 {(searchQuery || selectedCategory !== "All") && (
                   <button
                     onClick={handleResetFilters}
-                    className="flex items-center gap-1 text-red-600 hover:text-red-700 font-semibold underline underline-offset-2 transition-colors cursor-pointer"
+                    className="flex items-center gap-1 text-[#0C4B92] hover:text-[#0a3d77] font-semibold underline underline-offset-2 transition-colors cursor-pointer"
                   >
                     <RotateCcw className="w-3 h-3" />
                     <span>Reset</span>
@@ -430,8 +430,8 @@ export default function SpecializationCatalogue() {
                       {/* Flagship Badge (Von Restorff Effect) */}
                       {flagshipBadge && (
                         <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between">
-                          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-[5px] bg-red-600/90 text-white font-mono text-[11px] uppercase tracking-wider font-semibold backdrop-blur-sm shadow-sm">
-                            <Sparkles className="w-3 h-3" />
+                          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-[5px] bg-[#0C4B92] text-white font-mono text-[11px] uppercase tracking-wider font-semibold backdrop-blur-sm shadow-sm">
+                            <ShieldCheck className="w-3 h-3" />
                             <span>{flagshipBadge}</span>
                           </span>
                         </div>
@@ -442,7 +442,7 @@ export default function SpecializationCatalogue() {
                     <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
                       <div className="space-y-4">
                         {/* Title */}
-                        <h3 className="font-bold text-xl sm:text-2xl text-black tracking-tight group-hover:text-red-600 transition-colors">
+                        <h3 className="font-bold text-xl sm:text-2xl text-black tracking-tight group-hover:text-[#0C4B92] transition-colors">
                           {item.title}
                         </h3>
 
@@ -516,7 +516,7 @@ export default function SpecializationCatalogue() {
                       <div className="pt-4 border-t border-black/10 flex items-center justify-between gap-3">
                         <button
                           onClick={() => setModalItem(item)}
-                          className="text-xs font-mono uppercase tracking-wider font-semibold text-black hover:text-red-600 flex items-center gap-1.5 transition-colors cursor-pointer py-1.5"
+                          className="text-xs font-mono uppercase tracking-wider font-semibold text-black hover:text-[#0C4B92] flex items-center gap-1.5 transition-colors cursor-pointer py-1.5"
                         >
                           <span>Full Specifications</span>
                           <ArrowUpRight className="w-3.5 h-3.5" />
@@ -613,8 +613,8 @@ export default function SpecializationCatalogue() {
                                 <span
                                   className={`text-[10px] font-mono px-1.5 py-0.2 rounded font-semibold ${
                                     isActive
-                                      ? "bg-red-600 text-white"
-                                      : "bg-red-100 text-red-700"
+                                      ? "bg-[#0C4B92] text-white"
+                                      : "bg-[#0C4B92]/10 text-[#0C4B92]"
                                   }`}
                                 >
                                   {flagshipBadge}
@@ -632,7 +632,7 @@ export default function SpecializationCatalogue() {
                               opacity: isActive ? 1 : 0.3,
                             }}
                             className={`w-7 h-7 rounded-full flex items-center justify-center transition-colors ${
-                              isActive ? "bg-red-600 text-white" : "text-black/40"
+                              isActive ? "bg-[#0C4B92] text-white" : "text-black/40"
                             }`}
                           >
                             <ArrowRight className="w-3.5 h-3.5" />
@@ -647,7 +647,7 @@ export default function SpecializationCatalogue() {
                 <div className="mt-4 p-5 rounded-2xl bg-neutral-50 border border-black/10 space-y-3 shadow-xs">
                   <div className="flex items-center justify-between">
                     <span className="font-mono text-[11px] uppercase tracking-wider font-semibold text-black/70 flex items-center gap-1.5">
-                      <Sparkles className="w-3.5 h-3.5 text-red-600" />
+                      <ShieldCheck className="w-3.5 h-3.5 text-[#0C4B92]" />
                       Certified Workshop Standards
                     </span>
                     <span className="font-mono text-[10px] px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-semibold">
@@ -664,7 +664,7 @@ export default function SpecializationCatalogue() {
                         const formEl = document.getElementById("assessment-form");
                         if (formEl) formEl.scrollIntoView({ behavior: "smooth", block: "center" });
                       }}
-                      className="font-mono text-[11px] uppercase tracking-wider font-semibold text-red-600 hover:text-red-700 flex items-center gap-1 cursor-pointer"
+                      className="font-mono text-[11px] uppercase tracking-wider font-semibold text-[#0C4B92] hover:text-[#0a3d77] flex items-center gap-1 cursor-pointer"
                     >
                       <span>Inquire Custom RFQ</span>
                       <ArrowRight className="w-3 h-3" />
@@ -735,8 +735,8 @@ export default function SpecializationCatalogue() {
 
                     {FLAGSHIP_BADGES[activeMasterItem.id] && (
                       <div className="absolute bottom-2.5 left-3 z-10">
-                        <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-[5px] bg-red-600 text-white font-mono text-[11px] uppercase tracking-wider font-semibold shadow-sm">
-                          <Sparkles className="w-3 h-3" />
+                        <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-[5px] bg-[#0C4B92] text-white font-mono text-[11px] uppercase tracking-wider font-semibold shadow-sm">
+                          <ShieldCheck className="w-3 h-3" />
                           <span>{FLAGSHIP_BADGES[activeMasterItem.id]}</span>
                         </span>
                       </div>
@@ -806,7 +806,7 @@ export default function SpecializationCatalogue() {
                     <div className="pt-3 border-t border-black/10 flex items-center justify-between gap-3 shrink-0">
                       <button
                         onClick={() => setModalItem(activeMasterItem)}
-                        className="text-xs font-mono uppercase tracking-wider font-semibold text-black hover:text-red-600 flex items-center gap-1.5 transition-colors cursor-pointer py-1"
+                        className="text-xs font-mono uppercase tracking-wider font-semibold text-black hover:text-[#0C4B92] flex items-center gap-1.5 transition-colors cursor-pointer py-1"
                       >
                         <span>Full Specifications</span>
                         <ArrowUpRight className="w-3.5 h-3.5" />

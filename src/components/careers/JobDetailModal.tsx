@@ -119,7 +119,7 @@ export default function JobDetailModal({
 
               {/* Key Responsibilities */}
               <div className="space-y-4 pt-4 border-t border-white/10">
-                <h3 className="font-mono text-xs uppercase tracking-widest text-red-500 font-bold flex items-center gap-2">
+                <h3 className="font-mono text-xs uppercase tracking-widest text-[#60a5fa] font-bold flex items-center gap-2">
                   <span>/// KEY RESPONSIBILITIES</span>
                 </h3>
                 <div className="grid grid-cols-1 gap-3">
@@ -136,13 +136,13 @@ export default function JobDetailModal({
 
               {/* Role Requirements */}
               <div className="space-y-4 pt-4 border-t border-white/10">
-                <h3 className="font-mono text-xs uppercase tracking-widest text-red-500 font-bold flex items-center gap-2">
+                <h3 className="font-mono text-xs uppercase tracking-widest text-[#60a5fa] font-bold flex items-center gap-2">
                   <span>/// QUALIFICATIONS & REQUIREMENTS</span>
                 </h3>
                 <ul className="space-y-2.5">
                   {job.requirements.map((req, idx) => (
                     <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-white/80 leading-relaxed">
-                      <div className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0 mt-2" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#0C4B92] shrink-0 mt-2" />
                       <span>{req}</span>
                     </li>
                   ))}
@@ -151,7 +151,7 @@ export default function JobDetailModal({
 
               {/* Compensation & Benefits */}
               <div className="space-y-4 pt-4 border-t border-white/10">
-                <h3 className="font-mono text-xs uppercase tracking-widest text-red-500 font-bold flex items-center gap-2">
+                <h3 className="font-mono text-xs uppercase tracking-widest text-[#60a5fa] font-bold flex items-center gap-2">
                   <span>/// COMPENSATION & WORKPLACE PERKS</span>
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -178,7 +178,7 @@ export default function JobDetailModal({
 
               <button
                 onClick={() => onApply(job)}
-                className="px-6 py-2.5 rounded-full bg-red-600 hover:bg-red-700 text-white font-mono text-xs uppercase tracking-wider font-semibold flex items-center gap-2 transition-all shadow-md shadow-red-900/40 cursor-pointer active:scale-95"
+                className="px-6 py-2.5 rounded-full bg-[#0C4B92] hover:bg-[#0a3d77] text-white font-mono text-xs uppercase tracking-wider font-semibold flex items-center gap-2 transition-all shadow-md shadow-blue-900/40 cursor-pointer active:scale-95"
               >
                 <span>Apply for this Position</span>
                 <ArrowRight className="w-3.5 h-3.5" />

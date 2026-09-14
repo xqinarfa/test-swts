@@ -9,7 +9,7 @@ export default function CareersCulture() {
   const { culture } = CAREERS_DATA;
 
   const pillarIcons = [
-    <Cpu key="cpu" className="w-6 h-6 text-red-500" />,
+    <Cpu key="cpu" className="w-6 h-6 text-[#60a5fa]" />,
     <ShieldCheck key="shield" className="w-6 h-6 text-emerald-400" />,
     <Award key="award" className="w-6 h-6 text-amber-400" />,
     <Anchor key="anchor" className="w-6 h-6 text-cyan-400" />,

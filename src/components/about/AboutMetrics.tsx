@@ -56,7 +56,7 @@ export default function AboutMetrics() {
                 <span className="font-mono text-[11px] uppercase tracking-widest text-neutral-400 font-medium">
                   KP-{String(idx + 1).padStart(2, "0")}
                 </span>
-                <div className="w-2 h-2 rounded-full bg-neutral-300 group-hover:bg-red-600 transition-colors duration-300" />
+                <div className="w-2 h-2 rounded-full bg-neutral-300 group-hover:bg-[#0C4B92] transition-colors duration-300" />
               </div>
 
               {/* Main Number + Unit */}
@@ -67,7 +67,7 @@ export default function AboutMetrics() {
                   prefix={prefix}
                   duration={2}
                   delay={idx * 0.12}
-                  className="text-6xl sm:text-7xl lg:text-[84px] leading-none font-semibold tracking-[-0.06em] text-neutral-950 group-hover:text-red-600 transition-colors duration-300"
+                  className="text-6xl sm:text-7xl lg:text-[84px] leading-none font-semibold tracking-[-0.06em] text-neutral-950 group-hover:text-[#0C4B92] transition-colors duration-300"
                 />
                 <span className="text-3xl sm:text-4xl font-light text-neutral-400 tracking-tight ml-1">
                   {stat.unit}

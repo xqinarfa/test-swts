@@ -40,7 +40,7 @@ export default function AboutWhatWeDo() {
 
             {/* Frosted Glass Floating Quote Card */}
             <div className="absolute inset-x-5 sm:inset-x-8 bottom-6 sm:bottom-8 z-10 backdrop-blur-[20px] bg-black/65 border border-white/20 rounded-2xl p-6 md:p-7 text-white shadow-2xl">
-              <span className="font-serif text-3xl leading-none text-red-500 select-none block mb-2">
+              <span className="font-serif text-3xl leading-none text-[#0C4B92] select-none block mb-2">
                 “
               </span>
               <p className="font-sans text-base sm:text-[16.5px] leading-[1.55] font-normal text-white/95 mb-6">
@@ -102,7 +102,7 @@ export default function AboutWhatWeDo() {
               "Bonded multi-hub cross-docking",
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-2.5">
-                <div className="w-1.5 h-1.5 rounded-full bg-red-600 shrink-0" />
+                <div className="w-1.5 h-1.5 rounded-full bg-[#0C4B92] shrink-0" />
                 <span className="font-mono text-xs sm:text-[12.5px] text-neutral-700 tracking-wide font-medium">
                   {item}
                 </span>

@@ -206,51 +206,274 @@ export const NEWS_POSTS = [
 
 export const ABOUT_DATA = {
   hero: {
-    badge: "ABOUT US",
-    titlePrefix: "We make global transport",
-    titleSuffix: "predictable from day one.",
-    bgImage: "/assets/about/hero-bg.png",
-    gridSvg: "/assets/about/grid-pattern.svg",
+    badge: "About Us",
+    titlePrefix: "We Keep Your",
+    titleSuffix: "Plants & Vessels Running.",
+    subheadline:
+      "SWTS provides multi-discipline engineering services, precision reconditioning, and technical consultation for marine propulsion, power generation, and heavy process infrastructure.",
+    bgImage: "/assets/specializations/hero-workshop.jpg",
+    tags: [
+      "Marine & Offshore",
+      "Oil & Gas",
+      "Power Generation",
+      "Process Industries",
+      "Data Centers",
+      "50+ Years Legacy",
+    ],
   },
-  story: {
-    badge: "ABOUT US",
-    headlinePrefix: "Smart planning makes modern transport predictable.",
-    headlineSuffix: "Our system organizes every shipment before it moves, ensuring efficiency, safety, and consistent delivery performance.",
-    features: [
+  asia: {
+    badge: "Regional Group",
+    title: "SWTS Asia",
+    subtitle: "Heavy Engineering, Equipment Overhaul & Technical Consultation",
+    description:
+      "SWTS operates integrated engineering workshops across Singapore and Indonesia, providing high-precision maintenance, repair, and overhaul (MRO) solutions for marine, offshore, and industrial operators. Equipped with advanced diagnostic tools, large-capacity machine tools, and certified technical teams, we ensure asset reliability and rapid turnaround on critical plant and vessel equipment.",
+    keyPillars: [
       {
-        icon: "/assets/about/icon-plane.png",
-        text: "Reliable transport and warehousing designed for speed, safety, and efficiency.",
+        title: "Mechanical & Electrical Systems",
+        desc: "Overhaul, rewinding, and diagnostic testing for industrial electric motors, generators, and rotating machinery.",
       },
       {
-        icon: "/assets/about/icon-trolley.png",
-        text: "Smart logistics solutions powered by experience, technology, and global reach.",
+        title: "Surface Engineering & Metallurgy",
+        desc: "HVOF/HVAF thermal spray coatings and precision pulse laser welding for wear, corrosion, and dimensional restoration.",
+      },
+      {
+        title: "Certified Technical Specialists",
+        desc: "Experienced mechanical and marine engineers trained in OEM specifications and international classification standards.",
+      },
+      {
+        title: "24/7 Rapid Response & Voyage Support",
+        desc: "Immediate on-site troubleshooting, anchorage repairs, and planned plant turnaround execution.",
       },
     ],
-    image: "/assets/about/workers-logistics.png",
-    videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+  },
+  singapore: {
+    badge: "Heritage",
+    title: "SWTS Singapore",
+    headline: "Established 1973 · Formerly Siemens Westinghouse Technical Services",
+    description:
+      "Founded in Singapore in 1973 as Westinghouse Technical Services, our operations expanded into Siemens Westinghouse Technical Services (SWTS) in 1998, establishing five decades of heavy industrial engineering heritage in Southeast Asia.",
+    details:
+      "Today, SWTS is an independent engineering provider delivering multi-discipline MRO solutions: from OEM rotating equipment integration and electrical power systems to specialized machining and high-voltage motor diagnostics.",
+    highlights: [
+      { value: "50+", label: "Years Legacy", detail: "Continuous workshop presence in Southeast Asia since 1973" },
+      { value: "2", label: "Strategic Hubs", detail: "Integrated heavy facilities in Singapore and Batam" },
+      { value: "10", label: "Core Disciplines", detail: "Precision machining, laser welding, cryogenic overhaul, and HVOF" },
+      { value: "24/7", label: "Emergency MRO", detail: "Rapid voyage repairs and plant turnaround support" },
+    ],
+  },
+  batam: {
+    badge: "Service Center",
+    title: "PT. SWTS Batam",
+    subtitle: "Precision Engineering & Component Reconditioning Facility",
+    description:
+      "PT. SWTS Batam is an advanced technology service center supporting marine, offshore energy, power generation, and process plants. Our Batam facility combines heavy lifting capability, precision CNC machine tools, and specialized thermal coating booths to restore mission-critical equipment to original operational tolerances.",
+    subDescription:
+      "Key facility capabilities include 8-meter horizontal honing benches, dynamic balancing up to 2,000 kg, cryogenic pump test systems, and pulse laser deposition cells designed for fast-turnaround component rehabilitation.",
+    sectors: [
+      "Marine Propulsion & Deck",
+      "Offshore Oil & Gas",
+      "Thermal & Hydro Power",
+      "Chemical & Petrochemical",
+      "Data Center Backup Power",
+      "LNG & Cryogenic Storage",
+    ],
+    image: "/assets/specializations/hero-workshop.jpg",
+  },
+  capabilities: {
+    badge: "Core Disciplines",
+    title: "Workshop Disciplines & Specialized Services",
+    subtitle:
+      "In-house engineering capabilities restoring critical rotating, reciprocating, and static industrial components.",
+    summaryStatement:
+      "Our engineering facilities integrate advanced thermal coatings, zero-distortion laser deposition, and multi-axis CNC machining under strict quality management to reduce operating downtime and extend asset lifecycles.",
+    disciplines: [
+      {
+        code: "D-01",
+        title: "Engine Component Reconditioning",
+        scope: "Cylinder heads, liners, pistons, connecting rods, and crankshaft alignment restored to maker tolerances.",
+        highlight: "Class Approved Reconditioning",
+      },
+      {
+        code: "D-02",
+        title: "Cryogenic Pump & Valve Overhaul",
+        scope: "Specialized clean-room inspection, overhaul, cryogenic seal replacement, and leak testing for LNG systems.",
+        highlight: "-196°C LNG Ready",
+      },
+      {
+        code: "D-03",
+        title: "HVOF & HVAF Thermal Spray",
+        scope: "Carbide, ceramic, and superalloy coatings providing superior wear and corrosion resistance alternative to hard chrome.",
+        highlight: "Dense Wear-Resistant Matrix",
+      },
+      {
+        code: "D-04",
+        title: "Precision Pulse Laser Welding",
+        scope: "Minimal heat input deposition for shaft journals, impellers, and valve seats with zero metallurgical distortion.",
+        highlight: "Negligible Heat-Affected Zone",
+      },
+      {
+        code: "D-05",
+        title: "Precision Honing Bench",
+        scope: "Horizontal honing for engine liners and hydraulic barrels up to 8 meters length and 800 mm internal bore.",
+        highlight: "Bores up to 8,000 mm Length",
+      },
+      {
+        code: "D-06",
+        title: "Dynamic Balancing",
+        scope: "Multi-plane balancing for turbine rotors, pump impellers, and high-speed shafts up to 2,000 kg capacity.",
+        highlight: "ISO 1940 Quality Grades",
+      },
+    ],
+  },
+  partners: {
+    badge: "OEM & Strategic Technology Alliances",
+    title: "Our Partners",
+    subtitle:
+      "Collaborating with world-leading equipment manufacturers to deliver certified service, genuine components, and specialized engineering support across Southeast Asia.",
+    summaryStatement:
+      "SWTS engineers and workshop technicians undergo specialized OEM training, adhering to factory calibration protocols and international maritime classification standards.",
+    list: [
+      {
+        name: "Woodward",
+        category: "Control Systems & Governors",
+        logo: "/assets/partners/woodward.jpg",
+        description:
+          "Energy control and optimization solutions for industrial turbine governing, engine management systems, and electrical power generation controls.",
+        coverage: "Turbine & Engine Governors",
+      },
+      {
+        name: "Heinzmann",
+        category: "Drive & Engine Management",
+        logo: "/assets/partners/heinzmann.jpg",
+        description:
+          "Speed governing, engine management, and control systems for industrial diesel, gas, and dual-fuel engines across marine and power generation sectors.",
+        coverage: "Engine Speed Controls",
+      },
+      {
+        name: "Regulateurs Europa",
+        category: "Marine & Traction Controls",
+        logo: "/assets/partners/regulateurs-europa.jpg",
+        description:
+          "Member of the HEINZMANN Group. Mechanical, hydraulic, and electronic governing systems, actuators, and integrated marine propulsion controls.",
+        coverage: "Marine Governing Systems",
+      },
+      {
+        name: "Tritorc",
+        category: "Hydraulic Bolting & Machining",
+        logo: "/assets/partners/tritorc.jpg",
+        description:
+          "Industrial torquing, hydraulic tensioning tools, on-site flange facers, and cold pipe cutting solutions for high-integrity mechanical joints.",
+        coverage: "Controlled Bolting & In-Situ Tools",
+      },
+      {
+        name: "WEG",
+        category: "Motors, Alternators & Drives",
+        logo: "/assets/partners/weg.jpg",
+        description:
+          "High-efficiency low and medium voltage electric motors, generators, variable frequency drives, and turnkey electrical rotating machinery solutions.",
+        coverage: "Electric Rotating Machines",
+      },
+      {
+        name: "Danfoss",
+        category: "Drives & Power Solutions",
+        logo: "/assets/partners/danfoss.png",
+        description:
+          "VLT and VACON frequency inverters, variable speed drives, and precision engineering systems for heavy industrial and marine applications.",
+        coverage: "Frequency Inverters & Drives",
+      },
+      {
+        name: "Bosch Rexroth",
+        category: "Industrial Hydraulics & Drive Controls",
+        logo: "/assets/partners/rexroth.png",
+        description:
+          "Precision hydraulic pumps, motors, valves, and mobile control systems engineered for demanding offshore and plant machinery.",
+        coverage: "Hydraulics & Drive Controls",
+      },
+    ],
+  },
+  visionMission: {
+    vision: {
+      badge: "Strategic Vision",
+      title: "Our Vision",
+      statement:
+        "To be the premier independent engineering service provider for marine, power generation, and process plants across Southeast Asia.",
+    },
+    mission: {
+      badge: "Operating Mission",
+      title: "Our Mission",
+      statement: "We keep your plants and vessels running.",
+      detail:
+        "Delivering verified engineering quality, rapid turnaround, and uncompromising safety to maintain uptime for mission-critical operations.",
+    },
   },
 };
 
+export interface TimelineItem {
+  year: string;
+  title: string;
+  sublabel: string;
+  logoType: "westinghouse" | "siemens" | "privatised" | "pon" | "swts-company";
+  note: string;
+}
+
+export const TIMELINE_DATA: TimelineItem[] = [
+  {
+    year: "1973",
+    title: "WESTINGHOUSE",
+    sublabel: "Foundation",
+    logoType: "westinghouse",
+    note: "Established in Singapore as Westinghouse technical workshop, establishing 50+ years of regional engineering heritage.",
+  },
+  {
+    year: "1998",
+    title: "SIEMENS",
+    sublabel: "Joint Venture",
+    logoType: "siemens",
+    note: "Formed Siemens Westinghouse Technical Services (SWTS), expanding heavy industrial MRO & rotating machinery capabilities.",
+  },
+  {
+    year: "2006",
+    title: "PRIVATISED",
+    sublabel: "Independent MRO",
+    logoType: "privatised",
+    note: "Privatised as SWTS, operating as one of Asia's largest independent engineering service providers.",
+  },
+  {
+    year: "2011",
+    title: "100% PON HOLDINGS BV",
+    sublabel: "Global Integration",
+    logoType: "pon",
+    note: "Acquired by Pon Holdings BV, accelerating international maritime, process, and energy solutions.",
+  },
+  {
+    year: "2022",
+    title: "SWTS COMPANY",
+    sublabel: "Current Era",
+    logoType: "swts-company",
+    note: "Operating as an independent technology service leader with premier workshop facilities across Singapore and Batam.",
+  },
+];
+
 export const METRICS_DATA = {
-  badge: "POWERING GLOBAL LOGISTICS",
+  badge: "ENGINEERING FOOTPRINT & SCALE",
   mapImage: "/assets/about/world-map-dots.png",
   stats: [
-    { value: "+98", unit: "%", label: "Delivery Success Rate" },
-    { value: "120", unit: "+", label: "Countries Served" },
-    { value: "+80", unit: "k", label: "Tons of Cargo Transported" },
-    { value: "16", unit: "+", label: "Years Logistics Experience" },
+    { value: "50", unit: "+", label: "Years Engineering Legacy" },
+    { value: "10", unit: "", label: "Core Advanced Disciplines" },
+    { value: "100", unit: "%", label: "In-House Workshop Testing" },
+    { value: "24", unit: "/7", label: "Critical Plant & Vessel Support" },
   ],
 };
 
 export const WHAT_WE_DO_DATA = {
-  badge: "WHAT WE DO",
-  headingPrefix: "Shipping requires control, not assumptions.",
-  headingSuffix: "We use real-time tracking, optimized routing, and advanced logistics planning to move cargo faster and safer.",
-  quote: "“Logistics should never be a limitation. At SWTS, we design transport solutions that are precise, efficient, and built for the speed of modern business.”",
-  author: "Alexandra Reed",
-  role: "CEO, SWTS",
-  authorImage: "/assets/about/alexandra-reed.png",
-  bgImage: "/assets/about/ocean-water.png",
+  badge: "Workshop Operations",
+  headingPrefix: "Precision engineering requires control, not assumptions.",
+  headingSuffix: "We use advanced metallurgy, precision honing, and certified workshop procedures to restore mission-critical equipment.",
+  quote: "“Reliable engineering is about precision and accountability. We ensure every component meets OEM tolerances.”",
+  author: "Engineering Team",
+  role: "PT. SWTS Batam",
+  authorImage: "/assets/about/team-daniel-kovac.jpg",
+  bgImage: "/assets/specializations/hero-workshop.jpg",
 };
 
 export const TEAM_MEMBERS = [
@@ -809,7 +1032,7 @@ export const CAREERS_DATA = {
       type: "Full-Time · Permanent",
       experience: "3 - 5 Years Experience",
       tag: "FLAGSHIP OPENING",
-      badgeColor: "bg-red-600/90 text-white",
+      badgeColor: "bg-[#0C4B92]/90 text-white",
       summary: "Lead mechanical tolerance calculations, component reconditioning protocols, rotor dynamic balancing analysis, and precision fabrication design for mission-critical marine and industrial machinery.",
       responsibilities: [
         "Develop detailed engineering procedures and inspection plans for component restoration (turbines, pumps, shafts, bearings).",

@@ -55,7 +55,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/careers" className="hover:text-white transition-colors text-red-400 font-semibold">
+                <a href="/careers" className="hover:text-white transition-colors text-[#60a5fa] font-semibold">
                   Careers
                 </a>
               </li>

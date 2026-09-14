@@ -55,7 +55,7 @@ export default function VideoModal({
             {/* Header bar */}
             <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-[#161616]">
               <div className="flex items-center gap-3">
-                <span className="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse" />
+                <span className="w-2.5 h-2.5 rounded-full bg-[#0C4B92] animate-pulse" />
                 <h3 className="font-mono text-xs uppercase tracking-widest text-white/90">
                   {title}
                 </h3>

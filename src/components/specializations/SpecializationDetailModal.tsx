@@ -56,7 +56,7 @@ export default function SpecializationDetailModal({
             {/* Header bar */}
             <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-[#161616] shrink-0">
               <div className="flex items-center gap-3">
-                <span className="font-mono text-xs px-2.5 py-1 rounded bg-red-600/20 text-red-400 border border-red-500/30 font-semibold">
+                <span className="font-mono text-xs px-2.5 py-1 rounded bg-[#0C4B92]/30 text-[#60a5fa] border border-[#0C4B92]/50 font-semibold">
                   {item.number}
                 </span>
                 <span className="font-mono text-[11px] uppercase tracking-wider text-white/60">
@@ -157,7 +157,7 @@ export default function SpecializationDetailModal({
                         key={i}
                         className="flex items-center gap-2.5 text-xs sm:text-sm text-white/85 py-1"
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#0C4B92] shrink-0" />
                         <span>{eq}</span>
                       </div>
                     ))}

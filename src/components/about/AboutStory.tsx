@@ -1,118 +1,109 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React from "react";
 import { ABOUT_DATA } from "@/data/content";
-import ScrollScrubText from "@/components/ScrollScrubText";
-import VideoModal from "./VideoModal";
 
 export default function AboutStory() {
-  const { story } = ABOUT_DATA;
-  const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const { asia, singapore } = ABOUT_DATA;
 
   return (
-    <>
-      <section className="relative w-full py-20 md:py-28 px-6 sm:px-12 lg:px-16 text-black bg-white">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* Left Column: Heading, Scroll Scrub Story & Feature Cards */}
-          <div className="lg:col-span-6 flex flex-col justify-center space-y-8">
-            <div className="space-y-5">
-              {/* Badge */}
-              <div className="inline-flex backdrop-blur-[5px] bg-black/5 border border-black/10 px-3 py-1.5 rounded-[5px] w-fit">
-                <span className="font-mono text-[12px] font-semibold uppercase tracking-wider text-black/80">
-                  {story.badge}
+    <section className="relative w-full py-20 md:py-28 px-6 sm:px-12 lg:px-16 text-neutral-900 bg-white">
+      <div className="max-w-7xl mx-auto space-y-20">
+        {/* Top Section: SWTS Asia Overview & Engineering Pillars */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          {/* Left Column: Heading & Comprehensive Overview */}
+          <div className="lg:col-span-6 flex flex-col justify-center space-y-6">
+            <div className="space-y-4">
+              <span className="text-xs uppercase tracking-widest text-[#0C4B92] font-semibold">
+                {asia.badge}
+              </span>
+
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-neutral-950">
+                {asia.title}
+              </h2>
+
+              <p className="text-lg sm:text-xl font-medium text-neutral-800 leading-snug">
+                {asia.subtitle}
+              </p>
+
+              <p className="text-base text-neutral-700 leading-relaxed font-normal pt-1">
+                {asia.description}
+              </p>
+            </div>
+          </div>
+
+          {/* Right Column: 4 Technical Engineering Pillars */}
+          <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {asia.keyPillars.map((pillar, idx) => (
+              <div
+                key={idx}
+                className="p-6 rounded-xl border border-neutral-200 bg-neutral-50/50 hover:bg-white hover:border-neutral-300 hover:shadow-xs transition-all duration-200 flex flex-col gap-2.5"
+              >
+                <span className="text-xs font-semibold text-[#0C4B92] tracking-wider">
+                  0{idx + 1}
                 </span>
+                <h3 className="font-bold text-base text-neutral-900 leading-snug">
+                  {pillar.title}
+                </h3>
+                <p className="text-xs sm:text-sm leading-relaxed text-neutral-600 font-normal">
+                  {pillar.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Bottom Section: SWTS Singapore (50+ Years Heritage) */}
+        <div className="rounded-2xl border border-neutral-800 bg-neutral-950 text-white p-8 sm:p-12 lg:p-14 relative overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            {/* Left Col: Info */}
+            <div className="lg:col-span-7 space-y-5">
+              <span className="text-xs uppercase tracking-widest text-neutral-400 font-medium">
+                {singapore.badge}
+              </span>
+
+              <div className="space-y-2">
+                <h3 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+                  {singapore.title}
+                </h3>
+                <p className="text-sm uppercase tracking-wider text-neutral-400 font-medium">
+                  {singapore.headline}
+                </p>
               </div>
 
-              {/* Illuminating Headline */}
-              <div className="text-3xl sm:text-4xl lg:text-[42px] leading-[1.18] font-semibold tracking-[-0.03em] text-black">
-                <ScrollScrubText
-                  text={story.headlinePrefix}
-                  theme="light"
-                />
-              </div>
+              <p className="text-base text-neutral-300 leading-relaxed font-normal">
+                {singapore.description}
+              </p>
 
-              {/* Supporting Editorial Paragraph */}
-              <p className="text-base sm:text-[17px] text-black/75 leading-[1.65] max-w-xl font-sans font-normal">
-                {story.headlineSuffix}
+              <p className="text-sm text-neutral-400 leading-relaxed pt-3 border-t border-neutral-800">
+                {singapore.details}
               </p>
             </div>
 
-            {/* Feature Capability Cards */}
-            <div className="pt-6 border-t border-neutral-200 grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {story.features.map((feature, idx) => (
-                <motion.div
-                  key={idx}
-                  whileHover={{ y: -3 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                  className="p-5 rounded-xl border border-neutral-200/90 bg-neutral-50/80 hover:bg-neutral-100 hover:border-neutral-300 transition-all duration-200 flex flex-col gap-3 group shadow-xs"
+            {/* Right Col: 4 Authentic Operational Metric Cards */}
+            <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              {singapore.highlights.map((item, i) => (
+                <div
+                  key={i}
+                  className="p-5 rounded-xl bg-neutral-900 border border-neutral-800 flex flex-col justify-between min-h-[120px]"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-white border border-neutral-200 flex items-center justify-center p-2 shadow-xs group-hover:scale-105 transition-transform">
-                    <img
-                      src={feature.icon}
-                      alt=""
-                      className="w-full h-full object-contain"
-                    />
+                  <div>
+                    <span className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                      {item.value}
+                    </span>
+                    <h4 className="text-xs uppercase tracking-wider text-neutral-300 font-semibold mt-1">
+                      {item.label}
+                    </h4>
                   </div>
-                  <p className="font-sans text-[13.5px] leading-[1.5] text-neutral-700 font-medium">
-                    {feature.text}
+                  <p className="text-[11px] text-neutral-400 leading-relaxed mt-2 pt-2 border-t border-neutral-800">
+                    {item.detail}
                   </p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
-
-          {/* Right Column: Logistics Photo Card with Video Trigger */}
-          <div className="lg:col-span-6 flex items-center justify-center">
-            <div className="relative w-full aspect-[4/3] lg:aspect-[1/1] max-h-[560px] rounded-2xl overflow-hidden shadow-2xl shadow-black/10 group bg-neutral-900 border border-neutral-200/50">
-              <motion.img
-                whileHover={{ scale: 1.04 }}
-                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                src={story.image}
-                alt="SWTS Logistics Team"
-                className="w-full h-full object-cover"
-              />
-
-              {/* Top Industrial Header Badge */}
-              <div className="absolute top-5 left-5 z-10 backdrop-blur-md bg-black/40 border border-white/20 px-3 py-1 rounded-md">
-                <span className="font-mono text-[11px] uppercase tracking-widest text-white/90">
-                  Global Hubs & Warehousing
-                </span>
-              </div>
-
-              {/* Bottom Frosted Play Video Pill with Radar Wave */}
-              <motion.button
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                onClick={() => setIsVideoOpen(true)}
-                className="absolute bottom-5 right-5 z-10 backdrop-blur-[14px] bg-black/65 hover:bg-black/80 border border-white/25 text-white flex items-center gap-4 pl-5 pr-2.5 py-2.5 rounded-full shadow-2xl transition-all duration-300 focus:outline-none group/btn"
-                aria-label="Play company overview video"
-              >
-                <div className="flex flex-col text-left">
-                  <span className="font-mono text-[12px] uppercase tracking-wider font-semibold text-white">
-                    Watch Overview
-                  </span>
-                  <span className="font-mono text-[10px] text-white/60 tracking-wider">
-                    Full Video (01:45)
-                  </span>
-                </div>
-
-                <div className="relative w-10 h-10 rounded-full bg-white text-black flex items-center justify-center pl-0.5 shadow-md group-hover/btn:bg-red-600 group-hover/btn:text-white transition-colors duration-300">
-                  <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[8px] border-l-current" />
-                </div>
-              </motion.button>
-            </div>
-          </div>
         </div>
-      </section>
-
-      {/* Video Lightbox Modal */}
-      <VideoModal
-        isOpen={isVideoOpen}
-        onClose={() => setIsVideoOpen(false)}
-        videoUrl={story.videoUrl}
-        title="SWTS Logistics Overview"
-      />
-    </>
+      </div>
+    </section>
   );
 }

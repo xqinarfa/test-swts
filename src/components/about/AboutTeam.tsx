@@ -78,7 +78,7 @@ export default function AboutTeam() {
                       {/* Numeric Index */}
                       <span
                         className={`font-mono text-xs sm:text-sm tracking-widest transition-colors ${
-                          isSelected ? "text-red-500 font-bold" : "text-white/30"
+                          isSelected ? "text-[#60a5fa] font-bold" : "text-white/30"
                         }`}
                       >
                         {String(idx + 1).padStart(2, "0")}
@@ -104,7 +104,7 @@ export default function AboutTeam() {
                     <div
                       className={`w-9 h-9 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
                         isSelected
-                          ? "bg-red-600 text-white shadow-lg shadow-red-900/60 scale-100 opacity-100"
+                          ? "bg-[#0C4B92] text-white shadow-lg shadow-blue-900/60 scale-100 opacity-100"
                           : "bg-white/5 text-white/30 scale-90 opacity-0 group-hover:opacity-100"
                       }`}
                     >

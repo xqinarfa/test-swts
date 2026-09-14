@@ -5,10 +5,12 @@ import Navbar from "@/components/Navbar";
 import SidebarDrawer from "@/components/SidebarDrawer";
 import AboutHero from "@/components/about/AboutHero";
 import AboutStory from "@/components/about/AboutStory";
-import AboutMetrics from "@/components/about/AboutMetrics";
-import AboutWhatWeDo from "@/components/about/AboutWhatWeDo";
-import AboutTeam from "@/components/about/AboutTeam";
-import AppBanner from "@/components/AppBanner";
+import AboutTimeline from "@/components/about/AboutTimeline";
+import AboutBatam from "@/components/about/AboutBatam";
+import AboutCapabilities from "@/components/about/AboutCapabilities";
+import AboutPartners from "@/components/about/AboutPartners";
+import AboutVisionMission from "@/components/about/AboutVisionMission";
+import AboutCtaBanner from "@/components/about/AboutCtaBanner";
 import Footer from "@/components/Footer";
 import ParallaxSection from "@/components/ParallaxSection";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
@@ -21,8 +23,8 @@ export default function AboutPage() {
     damping: 28,
     restDelta: 0.0005,
   });
-  const heroY = useTransform(smoothHeroProgress, [0, 0.12], [0, 240]);
-  const heroOpacity = useTransform(smoothHeroProgress, [0, 0.1], [1, 0.35]);
+  const heroY = useTransform(smoothHeroProgress, [0, 0.12], [0, 200]);
+  const heroOpacity = useTransform(smoothHeroProgress, [0, 0.1], [1, 0.4]);
 
   return (
     <div className="relative min-h-screen bg-[#050505] text-white flex flex-col selection:bg-neutral-900 selection:text-white">
@@ -33,9 +35,9 @@ export default function AboutPage() {
         onClose={() => setIsSidebarOpen(false)}
       />
 
-      {/* Main Sections with Layered Skew Rectangle Curtain Animations */}
+      {/* Main Sections with Layered Skew Architecture */}
       <main className="flex-1 w-full relative">
-        {/* Layer 0: Hero Section (Pinned/Sticky in background with smooth parallax) */}
+        {/* Layer 0: Hero Section (Pinned background with gentle parallax) */}
         <div className="sticky top-0 z-0 h-screen w-full overflow-hidden">
           <motion.div
             style={{ y: heroY, opacity: heroOpacity }}
@@ -45,8 +47,7 @@ export default function AboutPage() {
           </motion.div>
         </div>
 
-        {/* Layer 1: About Story, Metrics & What We Do (Covers Hero with #ffffff Skew Curtain) */}
-        {/* mt-[4.5vw] ensures skew rectangle starts exactly at/below 100vh, leaving hero 100% full-bleed at scroll 0 */}
+        {/* Layer 1: White Content Section (Overview, Timeline, Batam Facility, Core Disciplines & Strategic Partners) */}
         <ParallaxSection
           zIndex={10}
           bgClassName="bg-white"
@@ -56,28 +57,22 @@ export default function AboutPage() {
           disableContentParallax={true}
         >
           <AboutStory />
-          <AboutMetrics />
-          <AboutWhatWeDo />
+          <AboutTimeline />
+          <AboutBatam />
+          <AboutCapabilities />
+          <AboutPartners />
         </ParallaxSection>
 
-        {/* Layer 2: The Team Section (Covers White Section with #131313 Skew Curtain) */}
+        {/* Layer 2: Strategic Vision, Consultation Banner & Footer */}
         <ParallaxSection
           zIndex={20}
-          bgClassName="bg-[#131313]"
-          skewColor="#131313"
+          bgClassName="bg-[#080808]"
+          skewColor="#080808"
           skewDirection="left-down"
+          disableContentParallax={true}
         >
-          <AboutTeam />
-        </ParallaxSection>
-
-        {/* Layer 3: App Banner & Footer (Covers Team with #050505 Skew Curtain) */}
-        <ParallaxSection
-          zIndex={30}
-          bgClassName="bg-[#050505]"
-          skewColor="#050505"
-          skewDirection="left-down"
-        >
-          <AppBanner />
+          <AboutVisionMission />
+          <AboutCtaBanner />
           <Footer />
         </ParallaxSection>
       </main>

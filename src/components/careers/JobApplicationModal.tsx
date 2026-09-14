@@ -153,7 +153,7 @@ export default function JobApplicationModal({
                         value={fullName}
                         onChange={(e) => setFullName(e.target.value)}
                         placeholder="e.g. Budi Pratama"
-                        className="w-full bg-white/5 border border-white/15 focus:border-red-500 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-white/30 outline-none transition-colors"
+                        className="w-full bg-white/5 border border-white/15 focus:border-[#0C4B92] rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-white/30 outline-none transition-colors"
                       />
                     </div>
 
@@ -168,7 +168,7 @@ export default function JobApplicationModal({
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="e.g. budi@example.com"
-                        className="w-full bg-white/5 border border-white/15 focus:border-red-500 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-white/30 outline-none transition-colors"
+                        className="w-full bg-white/5 border border-white/15 focus:border-[#0C4B92] rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-white/30 outline-none transition-colors"
                       />
                     </div>
                   </div>
@@ -185,7 +185,7 @@ export default function JobApplicationModal({
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
                         placeholder="e.g. +62 812 3456 7890"
-                        className="w-full bg-white/5 border border-white/15 focus:border-red-500 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-white/30 outline-none transition-colors"
+                        className="w-full bg-white/5 border border-white/15 focus:border-[#0C4B92] rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-white/30 outline-none transition-colors"
                       />
                     </div>
 
@@ -199,7 +199,7 @@ export default function JobApplicationModal({
                         value={portfolio}
                         onChange={(e) => setPortfolio(e.target.value)}
                         placeholder="e.g. linkedin.com/in/username"
-                        className="w-full bg-white/5 border border-white/15 focus:border-red-500 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-white/30 outline-none transition-colors"
+                        className="w-full bg-white/5 border border-white/15 focus:border-[#0C4B92] rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-white/30 outline-none transition-colors"
                       />
                     </div>
                   </div>
@@ -246,7 +246,7 @@ export default function JobApplicationModal({
                       value={coverNote}
                       onChange={(e) => setCoverNote(e.target.value)}
                       placeholder="Briefly state your relevant certifications (e.g., Welder 6G, SolidWorks Certified, ISO 1940 balancing experience)..."
-                      className="w-full bg-white/5 border border-white/15 focus:border-red-500 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-white/30 outline-none transition-colors resize-none"
+                      className="w-full bg-white/5 border border-white/15 focus:border-[#0C4B92] rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-white/30 outline-none transition-colors resize-none"
                     />
                   </div>
 
@@ -255,7 +255,7 @@ export default function JobApplicationModal({
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full py-3.5 rounded-xl bg-red-600 hover:bg-red-700 disabled:opacity-50 text-white font-mono text-xs uppercase tracking-wider font-semibold flex items-center justify-center gap-2.5 transition-all shadow-lg shadow-red-900/40 cursor-pointer active:scale-[0.99]"
+                      className="w-full py-3.5 rounded-xl bg-[#0C4B92] hover:bg-[#0a3d77] disabled:opacity-50 text-white font-mono text-xs uppercase tracking-wider font-semibold flex items-center justify-center gap-2.5 transition-all shadow-lg shadow-blue-900/40 cursor-pointer active:scale-[0.99]"
                     >
                       {isSubmitting ? (
                         <span>Processing Application...</span>

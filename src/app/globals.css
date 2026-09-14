@@ -3,9 +3,16 @@
 @theme {
   --font-sans: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --color-primary: #0C4B92;
+  --color-primary-hover: #0a3d77;
+  --color-primary-light: #1660b8;
+  --color-primary-subtle: rgba(12, 75, 146, 0.12);
 }
 
 :root {
+  --primary: #0C4B92;
+  --primary-hover: #0a3d77;
+  --primary-light: #1660b8;
   --background: #050505;
   --foreground: #ededed;
 }
@@ -14,6 +21,11 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+}
+
+::selection {
+  background-color: #0C4B92;
+  color: #ffffff;
 }
 
 /* Custom subtle scrollbar */
@@ -58,4 +70,3 @@ body {
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-

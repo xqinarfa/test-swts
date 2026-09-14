@@ -387,7 +387,7 @@ export default function CareersOpenings() {
 
                 {/* Job Title & Location Specs */}
                 <div className="space-y-3">
-                  <h3 className="text-2xl sm:text-3xl font-bold text-neutral-950 tracking-tight group-hover:text-red-600 transition-colors">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-neutral-950 tracking-tight group-hover:text-[#0C4B92] transition-colors">
                     {job.title}
                   </h3>
 
@@ -441,7 +441,7 @@ export default function CareersOpenings() {
 
                 <button
                   onClick={() => handleOpenApply(job)}
-                  className="px-6 py-2.5 rounded-full bg-black hover:bg-red-600 text-white font-mono text-xs uppercase tracking-wider font-semibold flex items-center gap-2 transition-all shadow-sm cursor-pointer group/btn"
+                  className="px-6 py-2.5 rounded-full bg-black hover:bg-[#0C4B92] text-white font-mono text-xs uppercase tracking-wider font-semibold flex items-center gap-2 transition-all shadow-sm cursor-pointer group/btn"
                 >
                   <span>Apply Now</span>
                   <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" />

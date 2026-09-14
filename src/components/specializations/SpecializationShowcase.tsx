@@ -186,7 +186,7 @@ export default function SpecializationShowcase() {
 
                       {/* Floating Badges */}
                       <div className="absolute top-4 left-4 flex items-center gap-2">
-                        <span className="font-mono text-xs px-2.5 py-1 rounded bg-red-600 font-semibold text-white shadow-md">
+                        <span className="font-mono text-xs px-2.5 py-1 rounded bg-[#0C4B92] font-semibold text-white shadow-md">
                           {activeItem.number}
                         </span>
                         <span className="backdrop-blur-md bg-black/60 border border-white/20 font-mono text-[11px] uppercase tracking-wider text-white px-3 py-1 rounded-full">

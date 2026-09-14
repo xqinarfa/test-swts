@@ -8,75 +8,72 @@ export default function AboutHero() {
   const { hero } = ABOUT_DATA;
 
   return (
-    <section className="relative w-full h-screen flex items-end justify-start bg-black overflow-hidden pb-16 md:pb-24 pt-36 px-6 sm:px-12 lg:px-16">
-      {/* Background Image with Cinematic Slow Zoom Entrance */}
+    <section className="relative w-full h-screen flex items-end justify-start bg-neutral-950 overflow-hidden pb-16 md:pb-24 pt-36 px-6 sm:px-12 lg:px-16">
+      {/* Background Image with Deep Cinematic Contrast */}
       <motion.div
-        initial={{ scale: 1.12, opacity: 0 }}
-        animate={{ scale: 1.04, opacity: 1 }}
-        transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
+        initial={{ scale: 1.08, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         className="absolute inset-0 z-0 pointer-events-none"
       >
         <img
           src={hero.bgImage}
-          alt="SWTS Port Logistics"
+          alt="SWTS Heavy Engineering Workshop"
           className="w-full h-full object-cover object-center"
         />
-        {/* Darkening Gradient & Color Wash */}
-        <div className="absolute inset-0 bg-black/55" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+        {/* Solid Darkening Gradients for High Text Legibility */}
+        <div className="absolute inset-0 bg-neutral-950/65" />
+        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/40 to-transparent" />
       </motion.div>
 
-      {/* Futuristic Grid Pattern Overlay */}
-      <div className="absolute inset-0 z-0 pointer-events-none mix-blend-overlay opacity-35 overflow-hidden">
-        <img
-          src={hero.gridSvg}
-          alt=""
-          className="w-full h-full object-cover scale-110"
-        />
-      </div>
-
-      {/* Hero Content Box */}
+      {/* Hero Editorial Content */}
       <div className="relative z-10 max-w-5xl w-full flex flex-col md:flex-row md:items-end justify-between gap-8">
-        <div className="flex flex-col items-start gap-4">
-          {/* Glassmorphism Badge */}
+        <div className="flex flex-col items-start gap-5">
+          {/* Authentic Section Label */}
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="backdrop-blur-[6px] bg-white/12 border border-white/15 px-3 py-1.5 rounded-[6px] shadow-sm shadow-black/40"
+            transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           >
-            <span className="font-mono text-[12px] uppercase tracking-wider text-white font-semibold">
+            <span className="text-xs uppercase tracking-widest text-neutral-400 font-medium">
               {hero.badge}
             </span>
           </motion.div>
 
-          {/* Staggered Two-Tone Headline */}
+          {/* Bold Editorial Headline */}
           <motion.h1
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="font-semibold text-4xl sm:text-5xl lg:text-[56px] leading-[1.12] tracking-[-0.03em] text-white max-w-3xl"
-          >
-            {hero.titlePrefix}{" "}
-            <span className="text-white/70">{hero.titleSuffix}</span>
-          </motion.h1>
-
-          {/* Key Capabilities Pills */}
-          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            className="font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.12] tracking-tight text-white max-w-3xl"
+          >
+            {hero.titlePrefix}{" "}
+            <span className="text-neutral-300">{hero.titleSuffix}</span>
+          </motion.h1>
+
+          {/* Subheadline */}
+          {hero.subheadline && (
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              className="text-base sm:text-lg text-neutral-300 max-w-2xl font-normal leading-relaxed"
+            >
+              {hero.subheadline}
+            </motion.p>
+          )}
+
+          {/* Core Sector Tags */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
             className="pt-2 flex flex-wrap gap-2 sm:gap-2.5"
           >
-            {[
-              "Multimodal Freight",
-              "IoT Real-Time Telematics",
-              "Bonded Warehousing",
-              "98%+ On-Time SLA",
-            ].map((tag, i) => (
+            {hero.tags.map((tag: string, i: number) => (
               <span
                 key={i}
-                className="backdrop-blur-md bg-white/10 border border-white/15 px-3 py-1 rounded-full text-xs font-mono tracking-wider text-white/90"
+                className="bg-neutral-900/80 border border-neutral-700/80 px-3 py-1 rounded-md text-xs font-mono tracking-wide text-neutral-200"
               >
                 {tag}
               </span>
@@ -84,22 +81,17 @@ export default function AboutHero() {
           </motion.div>
         </div>
 
-        {/* Subtle Scroll Cue Indicator */}
+        {/* Calm, Static Scroll Cue Indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.7 }}
-          className="hidden md:flex items-center gap-3 text-white/50 shrink-0 self-end pb-2"
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="hidden md:flex items-center gap-3 text-neutral-400 shrink-0 self-end pb-2"
         >
-          <span className="font-mono text-[11px] uppercase tracking-widest text-white/50">
+          <span className="font-mono text-[11px] uppercase tracking-widest text-neutral-400">
             Scroll to explore
           </span>
-          <div className="w-8 h-px bg-white/30" />
-          <motion.div
-            animate={{ y: [0, 6, 0] }}
-            transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
-            className="w-1.5 h-1.5 rounded-full bg-white/70"
-          />
+          <div className="w-8 h-px bg-neutral-600" />
         </motion.div>
       </div>
     </section>

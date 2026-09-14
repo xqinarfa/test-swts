@@ -16,21 +16,19 @@ export default function CareersCulture() {
   ];
 
   return (
-    <section className="relative w-full py-20 md:py-32 px-6 sm:px-12 lg:px-16 text-white bg-[#131313]">
+    <section className="relative w-full py-20 md:py-32 px-6 sm:px-12 lg:px-16 text-white bg-[#0a0a0a]">
       <div className="max-w-7xl mx-auto space-y-16">
         {/* Section Header */}
-        <div className="space-y-6 max-w-4xl">
-          <div className="backdrop-blur-[5px] bg-white/10 border border-white/15 px-3 py-1.5 rounded-[5px] w-fit">
-            <span className="font-mono text-[12px] uppercase tracking-wider text-white font-semibold">
-              {culture.badge}
-            </span>
-          </div>
+        <div className="space-y-4 max-w-4xl">
+          <span className="text-xs uppercase tracking-widest text-[#93c5fd] font-semibold block">
+            {culture.badge}
+          </span>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
             {culture.headline}
           </h2>
 
-          <p className="text-base sm:text-lg text-white/75 max-w-3xl leading-relaxed font-sans">
+          <p className="text-base sm:text-lg text-neutral-300 max-w-3xl leading-relaxed font-normal">
             {culture.description}
           </p>
         </div>
@@ -40,16 +38,15 @@ export default function CareersCulture() {
           {culture.pillars.map((pillar, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
+              viewport={{ once: true, margin: "-40px" }}
               transition={{
-                duration: 0.6,
-                delay: idx * 0.1,
+                duration: 0.5,
+                delay: idx * 0.08,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              whileHover={{ y: -4, borderColor: "rgba(255,255,255,0.25)" }}
-              className="p-7 rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-between gap-6 transition-all duration-300 group"
+              className="p-7 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-white/20 flex flex-col justify-between gap-6 transition-all duration-300 group"
             >
               <div className="space-y-4">
                 <div className="w-12 h-12 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center shadow-inner group-hover:scale-105 transition-transform">

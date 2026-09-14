@@ -1017,10 +1017,10 @@ export const CAREERS_DATA = {
     headline: "We invest in specialized engineering talent to solve the most demanding industrial challenges.",
     subtext: "From ultra-precision laser cladding to heavy marine shaft balancing, our engineering team in Batam sets the standard for reliability. We provide hands-on mentorship, modern machine parks, and a safety-first culture where your skills truly matter.",
     stats: [
-      { target: 100, formatThousands: false, unit: "%", label: "Safety Protocol Adherence" },
-      { target: 16, formatThousands: false, unit: "+", label: "Years Engineering Track Record" },
-      { target: 10, formatThousands: false, unit: "Roles", label: "Active Critical Openings" },
-      { target: 0, formatThousands: false, unit: "Deviation", label: "Zero Compromise on Quality" },
+      { target: 100, isNumeric: true, formatThousands: false, unit: "%", label: "Safety Protocol Adherence" },
+      { target: 16, isNumeric: true, formatThousands: false, unit: "+", label: "Years Engineering Track Record" },
+      { target: 10, isNumeric: true, formatThousands: false, unit: "Roles", label: "Active Critical Openings" },
+      { isNumeric: false, displayValue: "0%", unit: "Deviation", label: "Zero Critical Tolerance Deviation" },
     ],
   },
   positions: [
@@ -1407,7 +1407,7 @@ export const CAREERS_DATA = {
       },
       {
         title: "Continuous Professional Growth",
-        description: "We sponsor international welding certifications, NDT credentials, and technical workshops so our team stays at the cutting edge of surface engineering.",
+        description: "We sponsor international welding certifications, NDT credentials, and technical workshops, advancing mastery in modern thermal spray, robotic laser cladding, and precision metrology.",
       },
       {
         title: "Strategic Marine Hub Location",

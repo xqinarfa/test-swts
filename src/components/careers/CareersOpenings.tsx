@@ -7,7 +7,6 @@ import {
   MapPin,
   Clock,
   ArrowRight,
-  Sparkles,
   Check,
   Send,
   Search,
@@ -123,18 +122,16 @@ export default function CareersOpenings() {
     <section id="openings" className="relative w-full py-20 md:py-32 px-6 sm:px-12 lg:px-16 text-black bg-white border-t border-neutral-100">
       <div className="max-w-7xl mx-auto space-y-10">
         {/* Section Header */}
-        <div className="space-y-4">
-          <div className="inline-flex backdrop-blur-[5px] bg-black/5 border border-black/10 px-3 py-1.5 rounded-[5px] w-fit">
-            <span className="font-mono text-[12px] font-semibold uppercase tracking-wider text-black/80">
-              CURRENT OPENINGS
-            </span>
-          </div>
+        <div className="space-y-3">
+          <span className="text-xs uppercase tracking-widest text-[#0C4B92] font-semibold block">
+            Current Openings
+          </span>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-neutral-950">
             Join Our Batam Workshop Team
           </h2>
 
-          <p className="text-base text-neutral-600 max-w-2xl font-sans">
+          <p className="text-base text-neutral-600 max-w-2xl font-normal">
             We are actively looking for skilled engineers and technical craftsmen who thrive on precision, safety, and continuous technical advancement.
           </p>
         </div>
@@ -368,15 +365,13 @@ export default function CareersOpenings() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 10 }}
-                whileHover={{ y: -4 }}
-                transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                className="rounded-2xl border border-neutral-200/90 bg-white hover:border-neutral-300 shadow-xl shadow-neutral-900/5 overflow-hidden flex flex-col justify-between p-7 sm:p-9 transition-all group"
+                transition={{ duration: 0.25 }}
+                className="rounded-2xl border border-neutral-200/90 bg-white hover:border-[#0C4B92]/50 shadow-sm hover:shadow-md overflow-hidden flex flex-col justify-between p-7 sm:p-9 transition-all duration-200 group"
               >
                 <div className="space-y-6">
                 {/* Top Badge & Tag */}
                 <div className="flex items-center justify-between gap-4">
-                  <span className={`inline-flex items-center gap-1.5 font-mono text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-[5px] ${job.badgeColor}`}>
-                    <Sparkles className="w-3 h-3" />
+                  <span className={`inline-flex items-center font-mono text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-[5px] ${job.badgeColor}`}>
                     <span>{job.tag}</span>
                   </span>
 
@@ -441,10 +436,9 @@ export default function CareersOpenings() {
 
                 <button
                   onClick={() => handleOpenApply(job)}
-                  className="px-6 py-2.5 rounded-full bg-black hover:bg-[#0C4B92] text-white font-mono text-xs uppercase tracking-wider font-semibold flex items-center gap-2 transition-all shadow-sm cursor-pointer group/btn"
+                  className="px-6 py-2.5 rounded-full bg-black hover:bg-[#0C4B92] text-white font-mono text-xs uppercase tracking-wider font-semibold transition-all shadow-sm cursor-pointer"
                 >
-                  <span>Apply Now</span>
-                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" />
+                  Apply Now
                 </button>
               </div>
             </motion.div>

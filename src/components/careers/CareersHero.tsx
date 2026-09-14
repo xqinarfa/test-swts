@@ -29,40 +29,39 @@ export default function CareersHero() {
       {/* Hero Content Box */}
       <div className="relative z-10 max-w-5xl w-full flex flex-col md:flex-row md:items-end justify-between gap-8">
         <div className="flex flex-col items-start gap-4">
-          {/* Glassmorphism Badge */}
+          {/* Authentic Section Label */}
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="backdrop-blur-[6px] bg-white/12 border border-white/15 px-3 py-1.5 rounded-[6px] shadow-sm shadow-black/40"
+            transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           >
-            <span className="font-mono text-[12px] uppercase tracking-wider text-white font-semibold">
-              {hero.badge}
+            <span className="text-xs uppercase tracking-widest text-neutral-300 font-medium">
+              PT. SWTS Batam · Engineering Careers
             </span>
           </motion.div>
 
           {/* Staggered Two-Tone Headline */}
           <motion.h1
-            initial={{ opacity: 0, y: 28 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="font-semibold text-3xl sm:text-5xl lg:text-[56px] leading-[1.12] tracking-[-0.03em] text-white max-w-4xl"
+            transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            className="font-bold text-3xl sm:text-5xl lg:text-[56px] leading-[1.12] tracking-tight text-white max-w-4xl"
           >
             {hero.titlePrefix}{" "}
-            <span className="text-white/70">{hero.titleSuffix}</span>
+            <span className="text-neutral-300 font-normal">{hero.titleSuffix}</span>
           </motion.h1>
 
-          {/* Key Culture Highlights Row */}
+          {/* Technical Culture Tags */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.7, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
             className="pt-2 flex flex-wrap gap-2 sm:gap-2.5"
           >
             {hero.tags.map((tag, i) => (
               <span
                 key={i}
-                className="backdrop-blur-md bg-white/10 border border-white/15 px-3 py-1 rounded-full text-xs font-mono tracking-wider text-white/90"
+                className="bg-neutral-900/80 border border-neutral-700/80 px-3 py-1 rounded-md text-xs font-medium tracking-wide text-neutral-200"
               >
                 {tag}
               </span>
@@ -74,18 +73,13 @@ export default function CareersHero() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.7 }}
-          className="hidden md:flex items-center gap-3 text-white/50 shrink-0 self-end pb-2"
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="hidden md:flex items-center gap-3 text-neutral-400 shrink-0 self-end pb-2"
         >
-          <span className="font-mono text-[11px] uppercase tracking-widest text-white/50">
+          <span className="text-xs uppercase tracking-widest text-neutral-400 font-medium">
             Scroll to explore
           </span>
-          <div className="w-8 h-px bg-white/30" />
-          <motion.div
-            animate={{ y: [0, 6, 0] }}
-            transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
-            className="w-1.5 h-1.5 rounded-full bg-white/70"
-          />
+          <div className="w-8 h-px bg-neutral-600" />
         </motion.div>
       </div>
     </section>

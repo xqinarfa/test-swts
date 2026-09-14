@@ -126,7 +126,7 @@ export default function JobApplicationModal({
                       Application Submitted Successfully!
                     </h4>
                     <p className="text-sm text-white/70 max-w-md mx-auto leading-relaxed">
-                      Thank you, <span className="text-white font-semibold">{fullName}</span>. Our recruitment team at PT. SWTS Batam has received your application for <span className="text-white font-semibold">{job.title}</span>. We will review your profile and contact you via email or WhatsApp.
+                      Thank you, <span className="text-white font-semibold">{fullName}</span>. Your technical application and credentials for <span className="text-white font-semibold">{job.title}</span> have been logged into our Batam engineering recruitment system. Our HR team and Workshop Operations Director will evaluate your profile and reach out within 3 to 5 operational working days.
                     </p>
                   </div>
 

@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import ScrollScrubText from "@/components/ScrollScrubText";
 import AnimatedCounter from "@/components/AnimatedCounter";
 
 export default function SpecializationIntro() {
@@ -18,15 +19,15 @@ export default function SpecializationIntro() {
   return (
     <section className="relative w-full py-16 md:py-24 px-6 sm:px-12 lg:px-16 text-neutral-950 bg-white">
       <div className="max-w-7xl mx-auto space-y-16">
-        {/* Editorial Statement Header */}
+        {/* Editorial Statement Header with Scroll Scrub */}
         <div className="space-y-4 max-w-4xl">
           <span className="text-xs uppercase tracking-widest text-[#0C4B92] font-semibold">
             Engineering Excellence · PT. SWTS Batam
           </span>
 
-          <p className="text-2xl sm:text-3xl md:text-[32px] leading-[1.35] font-semibold tracking-tight text-neutral-900">
-            {introText}
-          </p>
+          <div className="text-2xl sm:text-3xl md:text-[32px] leading-[1.35] font-semibold tracking-tight text-neutral-900">
+            <ScrollScrubText text={introText} theme="light" />
+          </div>
         </div>
 
         {/* 4-Stat Capability Strip */}

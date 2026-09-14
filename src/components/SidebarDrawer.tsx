@@ -1,8 +1,10 @@
 "use client";
 
 import React, { useEffect } from "react";
-import { X } from "lucide-react";
-import { CONTACT_INFO } from "@/data/content";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { X, ArrowRight } from "lucide-react";
+import { CONTACT_INFO, NAV_LINKS } from "@/data/content";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface SidebarDrawerProps {
@@ -29,6 +31,8 @@ const SOCIAL_LINKS = [
 ];
 
 export default function SidebarDrawer({ isOpen, onClose }: SidebarDrawerProps) {
+  const pathname = usePathname();
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -84,6 +88,41 @@ export default function SidebarDrawer({ isOpen, onClose }: SidebarDrawerProps) {
 
               {/* Information Groups */}
               <div className="space-y-[32px] relative z-10">
+                {/* Mobile/Tablet Primary Page Navigation */}
+                <div className="flex flex-col gap-3 pb-6 border-b border-white/10 lg:hidden">
+                  <div className="backdrop-blur-[5px] bg-white/12 px-[9px] py-[6px] rounded-[5px] inline-flex items-center w-fit">
+                    <span className="font-mono font-semibold text-[12px] text-white tracking-[-0.1px] uppercase leading-none">
+                      Navigation
+                    </span>
+                  </div>
+                  <nav className="flex flex-col gap-1">
+                    {NAV_LINKS.map((link) => {
+                      const isActive =
+                        link.href === "/"
+                          ? pathname === "/"
+                          : link.href.startsWith("/#")
+                          ? false
+                          : pathname === link.href;
+
+                      return (
+                        <Link
+                          key={link.label}
+                          href={link.href}
+                          onClick={onClose}
+                          className={`py-2 px-3 rounded-lg text-sm font-semibold tracking-wide transition-all flex items-center justify-between ${
+                            isActive
+                              ? "bg-white/15 text-white"
+                              : "text-white/75 hover:text-white hover:bg-white/5"
+                          }`}
+                        >
+                          <span>{link.label}</span>
+                          <ArrowRight className="w-3.5 h-3.5 opacity-50" />
+                        </Link>
+                      );
+                    })}
+                  </nav>
+                </div>
+
                 {/* Location (Figma 170:5014) */}
                 <div className="flex flex-col gap-[9px] items-start">
                   <div className="backdrop-blur-[5px] bg-white/12 px-[9px] py-[6px] rounded-[5px] inline-flex items-center">

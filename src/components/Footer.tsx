@@ -60,8 +60,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/#services" className="hover:text-white transition-colors">
-                  Services <span className="text-white/40">(04)</span>
+                <a href="/services" className="hover:text-white transition-colors">
+                  Services <span className="text-white/40">(05)</span>
                 </a>
               </li>
               <li>

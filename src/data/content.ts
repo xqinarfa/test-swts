@@ -4,7 +4,6 @@ export const NAV_LINKS = [
   { label: "SPECIALIZATIONS", href: "/specializations" },
   { label: "CAREERS", href: "/careers" },
   { label: "SERVICES (04)", href: "/#services" },
-  { label: "NEWS", href: "/#news" },
   { label: "CONTACT", href: "/#contact" },
 ];
 

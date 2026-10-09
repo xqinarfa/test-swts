@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { ArrowRight, Package, Ship, Navigation } from "lucide-react";
 import { INDUSTRIES } from "@/data/content";
 import { motion, AnimatePresence } from "framer-motion";
-import ScrollScrubText from "@/components/ScrollScrubText";
+import ScrollScrubText from "@/components/ui/ScrollScrubText";
 
 export default function Industries() {
   const [activeIndustryId, setActiveIndustryId] = useState<string>(INDUSTRIES[0].id);

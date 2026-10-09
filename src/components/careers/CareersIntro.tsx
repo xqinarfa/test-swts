@@ -2,8 +2,8 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import ScrollScrubText from "@/components/ScrollScrubText";
-import AnimatedCounter from "@/components/AnimatedCounter";
+import ScrollScrubText from "@/components/ui/ScrollScrubText";
+import AnimatedCounter from "@/components/ui/AnimatedCounter";
 import { CAREERS_DATA } from "@/data/content";
 
 export default function CareersIntro() {

@@ -1,18 +1,18 @@
 "use client";
 
 import React, { useState } from "react";
-import Navbar from "@/components/Navbar";
-import SidebarDrawer from "@/components/SidebarDrawer";
-import Hero from "@/components/Hero";
-import AboutUs from "@/components/AboutUs";
-import Services from "@/components/Services";
-import Industries from "@/components/Industries";
-import Reviews from "@/components/Reviews";
-import AppBanner from "@/components/AppBanner";
-import FaqAndNews from "@/components/FaqAndNews";
-import ContactQuote from "@/components/ContactQuote";
-import Footer from "@/components/Footer";
-import ParallaxSection from "@/components/ParallaxSection";
+import Navbar from "@/components/layout/Navbar";
+import SidebarDrawer from "@/components/layout/SidebarDrawer";
+import Footer from "@/components/layout/Footer";
+import Hero from "@/components/home/Hero";
+import AboutUs from "@/components/home/AboutUs";
+import Services from "@/components/home/Services";
+import Industries from "@/components/home/Industries";
+import Reviews from "@/components/home/Reviews";
+import AppBanner from "@/components/home/AppBanner";
+import FaqAndNews from "@/components/home/FaqAndNews";
+import ContactQuote from "@/components/home/ContactQuote";
+import ParallaxSection from "@/components/ui/ParallaxSection";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
 export default function Home() {

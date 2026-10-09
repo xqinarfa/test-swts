@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, IBM_Plex_Mono } from "next/font/google";
+import SmoothScrollProvider from "@/components/layout/SmoothScrollProvider";
 import "./globals.css";
 
 const inter = Inter({
@@ -23,8 +24,6 @@ export const metadata: Metadata = {
     icon: "/assets/82b66b848e80164b05e8e4c9ecaca6890fa23e23.png",
   },
 };
-
-import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 
 export default function RootLayout({
   children,

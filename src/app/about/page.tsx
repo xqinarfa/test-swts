@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import Navbar from "@/components/Navbar";
-import SidebarDrawer from "@/components/SidebarDrawer";
+import Navbar from "@/components/layout/Navbar";
+import SidebarDrawer from "@/components/layout/SidebarDrawer";
+import Footer from "@/components/layout/Footer";
 import AboutHero from "@/components/about/AboutHero";
 import AboutStory from "@/components/about/AboutStory";
 import AboutTimeline from "@/components/about/AboutTimeline";
@@ -11,8 +12,7 @@ import AboutCapabilities from "@/components/about/AboutCapabilities";
 import AboutPartners from "@/components/about/AboutPartners";
 import AboutVisionMission from "@/components/about/AboutVisionMission";
 import AboutCtaBanner from "@/components/about/AboutCtaBanner";
-import Footer from "@/components/Footer";
-import ParallaxSection from "@/components/ParallaxSection";
+import ParallaxSection from "@/components/ui/ParallaxSection";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
 export default function AboutPage() {

@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { SERVICES_DATA } from "@/data/content";
 import { motion } from "framer-motion";
-import ScrollScrubText from "@/components/ScrollScrubText";
+import ScrollScrubText from "@/components/ui/ScrollScrubText";
 
 export default function Services() {
   const [activeService, setActiveService] = useState(SERVICES_DATA[0].id);

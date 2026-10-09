@@ -1,15 +1,15 @@
 "use client";
 
 import React, { useState } from "react";
-import Navbar from "@/components/Navbar";
-import SidebarDrawer from "@/components/SidebarDrawer";
+import Navbar from "@/components/layout/Navbar";
+import SidebarDrawer from "@/components/layout/SidebarDrawer";
+import Footer from "@/components/layout/Footer";
 import ServicesHero from "@/components/services/ServicesHero";
 import ServicesIntro from "@/components/services/ServicesIntro";
 import FiveServicesGrid from "@/components/services/FiveServicesGrid";
 import SectorDetailModal from "@/components/services/SectorDetailModal";
 import ServicesCommitment from "@/components/services/ServicesCommitment";
-import Footer from "@/components/Footer";
-import ParallaxSection from "@/components/ParallaxSection";
+import ParallaxSection from "@/components/ui/ParallaxSection";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { SERVICES_SECTORS, SectorData } from "@/data/servicesData";
 

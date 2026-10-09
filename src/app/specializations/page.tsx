@@ -1,14 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
-import Navbar from "@/components/Navbar";
-import SidebarDrawer from "@/components/SidebarDrawer";
+import Navbar from "@/components/layout/Navbar";
+import SidebarDrawer from "@/components/layout/SidebarDrawer";
+import Footer from "@/components/layout/Footer";
 import SpecializationHero from "@/components/specializations/SpecializationHero";
 import SpecializationIntro from "@/components/specializations/SpecializationIntro";
 import SpecializationCatalogue from "@/components/specializations/SpecializationCatalogue";
 import SpecializationFacility from "@/components/specializations/SpecializationFacility";
-import Footer from "@/components/Footer";
-import ParallaxSection from "@/components/ParallaxSection";
+import ParallaxSection from "@/components/ui/ParallaxSection";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
 export default function SpecializationsPage() {

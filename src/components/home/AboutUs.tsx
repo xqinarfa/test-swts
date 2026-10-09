@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import { ArrowRight, Play, X } from "lucide-react";
 import { PARTNERS } from "@/data/content";
 import { motion } from "framer-motion";
-import ScrollScrubText from "@/components/ScrollScrubText";
-import AnimatedCounter from "@/components/AnimatedCounter";
+import ScrollScrubText from "@/components/ui/ScrollScrubText";
+import AnimatedCounter from "@/components/ui/AnimatedCounter";
 
 export default function AboutUs() {
   const [isVideoOpen, setIsVideoOpen] = useState(false);

@@ -1,14 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
-import Navbar from "@/components/Navbar";
-import SidebarDrawer from "@/components/SidebarDrawer";
+import Navbar from "@/components/layout/Navbar";
+import SidebarDrawer from "@/components/layout/SidebarDrawer";
+import Footer from "@/components/layout/Footer";
 import CareersHero from "@/components/careers/CareersHero";
 import CareersIntro from "@/components/careers/CareersIntro";
 import CareersOpenings from "@/components/careers/CareersOpenings";
 import CareersCulture from "@/components/careers/CareersCulture";
-import Footer from "@/components/Footer";
-import ParallaxSection from "@/components/ParallaxSection";
+import ParallaxSection from "@/components/ui/ParallaxSection";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
 export default function CareersPage() {
